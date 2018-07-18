@@ -5,7 +5,7 @@ echo "$0 $1"
 
 echo "JDKDIR: $JDKDIR"
 
-if [ -z ${JDKDIR} ] || [ ! -e ${JDKDIR} ]; then
+if [ -z ${JDKDIR} ] || [ ! -d ${JDKDIR} ]; then
 	echo "JDKDIR is undefined"
 	exit 1
 fi

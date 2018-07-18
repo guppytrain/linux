@@ -1,0 +1,22 @@
+
+if [ -e "$SHAREDIR" ]; then
+	SHARE_DIR="$SHAREDIR"
+fi
+
+if [ -d "$SHARE_DIR/bin" ] ; then
+	echo "Adding share bin/ to path"
+    PATH="$SHARE_DIR/bin:$PATH"
+fi
+
+
+if [ -f "$SHARE_DIR/etc/.common_env" ] ; then
+	echo "Including .common_env"
+    . "$SHARE_DIR/etc/.common_env"
+fi
+
+
+if [ -f "$SHARE_DIR/etc/.common_aliases" ] ; then
+	echo "Including .common_aliases"
+    . "$SHARE_DIR/etc/.common_aliases"
+fi
+

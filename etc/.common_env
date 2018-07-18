@@ -1,9 +1,16 @@
-export JDKDIR="/usr/local/jdk"
-export JDK10_HOME="$JDKDIR/jdk-10.0.1"
-export JDK8_HOME="$JDKDIR/jdk1.8.0_171"
-export JAVA_HOME="$JDKDIR/current"
-export J2SDKDIR="$JAVA_HOME"
-export J2REDIR="$JAVA_HOME/jre"
-export DERBY_HOME="$JAVA_HOME/db" 
+JDK_HOME="/usr/local/jdk"
+if [ -d $JDK_HOME ]; then
+	export JDKDIR=$JDK_HOME
+	export JDK10_HOME="$JDKDIR/jdk-10.0.1"
+	export JDK8_HOME="$JDKDIR/jdk1.8.0_171"
+	export JAVA_HOME="$JDKDIR/current"
+	export J2SDKDIR="$JAVA_HOME"
+	export J2REDIR="$JAVA_HOME/jre"
+	export DERBY_HOME="$JAVA_HOME/db" 
 
-PATH="$PATH:$J2SDKDIR/bin:$J2REDIR/bin:$DERBY_HOME/bin"
+	PATH="$PATH:$J2SDKDIR/bin:$J2REDIR/bin:$DERBY_HOME/bin"
+fi
+
+export DOCKERID="guppytrain"
+
+

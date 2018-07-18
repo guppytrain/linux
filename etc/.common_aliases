@@ -1,106 +1,20 @@
 # docker related
+
+# sd.sh aliases
 # Usage: $0 {c|i|ils|cls|clsall|r|e|ri|ei|rsh|rbash|esh|ebash}
 
-function sd() {
-	case "$1" in
-		c)
-			echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
-			sudo docker container $2 $3 $4 $5 $6 $7 $8
-			;;
-		i)
-			echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
-			sudo docker image $2 $3 $4 $5 $6 $7 $8
-			;;
-		ils)
-			echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
-			sudo docker image ls $2 $3 $4 $5 $6 $7 $8
-			;;
-		cls)
-			echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
-			sudo docker container ls $2 $3 $4 $5 $6 $7 $8
-			;;
-		clsall)
-			echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
-			sudo docker container ls --all
-			;;
-		r)
-			echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
-			
-			if [ ! -z $2 ]; then
-				sudo docker run $2 $3 $4 $5 $6 $7 $8
-			else
-				echo "Expected argument: \$2:<image name>"
-			fi
-			;;
-		e)
-			echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
-
-			if [ ! -z $2 ]; then
-				sudo docker exec $2 $3 $4 $5 $6 $7 $8
-			else
-				echo "Expected argument: \$2:<image name>"
-			fi
-			;;
-		ri)
-			echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
-
-			if [ ! -z $2 ]; then
-				sudo docker run -it $2 $3 $4 $5 $6 $7 $8
-			else
-				echo "Expected argument: \$2:<image name>"
-			fi
-			;;
-		ei)
-			echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
-
-			if [ ! -z $2 ]; then
-				sudo docker exec -it $2 $3 $4 $5 $6 $7 $8
-			else
-				echo "Expected argument: \$2:<image name>"
-			fi
-			;;
-		rsh)
-			echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
-
-			if [ ! -z $2 ]; then
-				sudo docker run -it $2 sh $3 $4 $5 $6 $7 $8
-			else
-				echo "Expected argument: \$2:<image name>"
-			fi
-			;;
-		rbash)
-			echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
-
-			if [ ! -z $2 ]; then
-				sudo docker run -it $2 bash $3 $4 $5 $6 $7 $8
-			else
-				echo "Expected argument: \$2:<image name>"
-			fi
-			;;
-		esh)
-			echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
-
-			if [ ! -z $2 ]; then
-				sudo docker exec -it $2 sh $3 $4 $5 $6 $7 $8
-			else
-				echo "Expected argument: \$2:<image name>"
-			fi
-			;;
-		ebash)
-			echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
-
-			if [ ! -z $2 ]; then
-				sudo docker exec -it $2 bash $3 $4 $5 $6 $7 $8
-			else
-				echo "Expected argument: \$2:<image name>"
-			fi
-			;;
-		*)
-			echo $"Usage: $0 {c|i|ils|cls|clsall|r|e|ri|ei|rsh|rbash|esh|ebash}"
-			# exit 1
-	esac
-}
-
-export -f sd
-
+alias sd="sd.sh '0' $1 $2 $3 $4 $5 $6 $7 $8"
+alias sdc="sd.sh 'c' $1 $2 $3 $4 $5 $6 $7 $8"
+alias sdi="sd.sh 'i' $1 $2 $3 $4 $5 $6 $7 $8"
+alias sdils="sd.sh 'ils' $1 $2 $3 $4 $5 $6 $7 $8"
+alias sdcls="sd.sh 'cls' $1 $2 $3 $4 $5 $6 $7 $8"
+alias sdclsall="sd.sh 'clsall' $1 $2 $3 $4 $5 $6 $7 $8"
+alias sdr="sd.sh 'r' $1 $2 $3 $4 $5 $6 $7 $8"
+alias sde="sd.sh 'e' $1 $2 $3 $4 $5 $6 $7 $8"
+alias sdri="sd.sh 'ri' $1 $2 $3 $4 $5 $6 $7 $8"
+alias sdei="sd.sh 'ei' $1 $2 $3 $4 $5 $6 $7 $8"
+alias sdrsh="sd.sh 'rsh' $1 $2 $3 $4 $5 $6 $7 $8"
+alias sdrbash="sd.sh 'rbash' $1 $2 $3 $4 $5 $6 $7 $8"
+alias sdesh="sd.sh 'esh' $1 $2 $3 $4 $5 $6 $7 $8"
+alias sdebash="sd.sh 'ebash' $1 $2 $3 $4 $5 $6 $7 $8"
 
