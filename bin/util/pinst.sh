@@ -12,5 +12,5 @@ if [ -n "$(which apt)" ]; then
 elif [ -n "$(which apk)" ]; then
 	sudo apk add "$@"
 elif [ -n "$(which pacman)" ]; then
-	sudo pacman -Sy "$@"
+	sudo pacman -Sy --needed "$@"
 fi
