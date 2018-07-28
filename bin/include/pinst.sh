@@ -9,8 +9,8 @@ fi
 
 if [ -n "$(which apt)" ]; then
 	sudo apt-get install "$@"
-elif [ -n "$(which apk)" ]; then
-	sudo apk add "$@"
 elif [ -n "$(which pacman)" ]; then
 	sudo pacman -Sy --needed "$@"
+elif [ -n "$(which apk)" ]; then
+	sudo apk add "$@"
 fi
