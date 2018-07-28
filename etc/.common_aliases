@@ -1,4 +1,9 @@
 # bash aliases
+
+# clear n reset
+alias c="clear"
+alias r="reset"
+
 ## Colorize the ls output ##
 alias ls='ls --color=auto'
  
@@ -107,6 +112,8 @@ alias cpuinfo='lscpu'
 ## get GPU ram on desktop / laptop##
 alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 
+# java related
+alias jv="java -version"
 
 # docker related
 

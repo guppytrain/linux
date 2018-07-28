@@ -1,8 +1,8 @@
 #!/bin/sh
 
-PATH="$HOME/dev/linux/util:$PATH"
+PATH="$HOME/dev/linux/bin/include:$PATH"
 
-cd "$HOME/dev/linux/util"
+cd "$HOME/dev/linux/bin/include"
 
 ./pupdate.sh
 
