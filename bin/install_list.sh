@@ -4,14 +4,13 @@
 . ./env.sh
 
 # echo "PATH: $PATH"
-
-# pupdate.sh
+pupdate.sh
 
 # zsh
 zsh_install.sh
 
 # vim
-# pinst.sh vim
+pinst.sh vim
 
 # google chrome
 

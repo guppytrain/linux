@@ -9,9 +9,9 @@ if [ -d $JDK_HOME ]; then
 	export DERBY_HOME="$JAVA_HOME/db" 
 
 	# PATH="$PATH:$J2SDKDIR/bin:$J2REDIR/bin:$DERBY_HOME/bin"
-	. addpath.sh "$J2SDKDIR/bin" "tail"
-	. addpath.sh "$J2REDIR/bin" "tail"
-	. addpath.sh "$DERBY_HOME/bin" "tail"
+	addpath "$J2SDKDIR/bin" "tail"
+	addpath "$J2REDIR/bin" "tail"
+	addpath "$DERBY_HOME/bin" "tail"
 fi
 
 export DOCKERID="guppytrain"

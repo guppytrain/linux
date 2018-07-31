@@ -1,10 +1,14 @@
 #!/bin/sh
 
-export CWH="$(cd ..; pwd)"
+CWH="$(cd ..; pwd)"
 
-PATH="$CWH/bin:/$CWH/bin/include:$PATH"
-# . $CWH/bin/addpath.sh "$CWH/bin" 
-# . $CWH/bin/addpath.sh "$CWH/bin/include" 
+echo "$CWH"
+
+. "$CWH/bin/addpath.sh"
+
+# PATH="$CWH/bin:/$CWH/bin/include:$PATH"
+addpath "$CWH/bin" 
+addpath "$CWH/bin/include" 
 
 # package manager specific env detection
 
@@ -19,12 +23,12 @@ elif [ -n "$(which apk)" ]; then
 	DISTRO="alp"
 fi
 
-export DISTRO_DIR="$CWH/bin/include/$DISTRO"
+DISTRO_DIR="$CWH/bin/include/$DISTRO"
 
 if [ -d "$DISTRO_DIR" ]; then
 	PATH="$DISTRO_DIR:$PATH"
 fi
 
-export DEV_DIR="$HOME/dev"
+DEV_DIR="$HOME/dev"
 
 
