@@ -2,11 +2,13 @@
 
 export CWH="$(cd ..; pwd)"
 
-. "$CWH/bin/addpath.sh"
+. "$CWH/bin/util/addpath.sh"
 
 # PATH="$CWH/bin:/$CWH/bin/include:$PATH"
 addpath "$CWH/bin" 
+addpath "$CWH/bin/util" 
 addpath "$CWH/bin/include" 
+addpath "$CWH/bin/include/common"
 
 # package manager specific env detection
 
@@ -27,7 +29,11 @@ if [ -d "$DISTRO_DIR" ]; then
 	PATH="$DISTRO_DIR:$PATH"
 fi
 
-export DEV_DIR="$HOME/dev"
-
 export PATH
+
+export CLEAN_DIR="$CWH/bin/.clean"
+export DOWNLOAD_DIR="$CWH/bin/.download"
+
+export DEV_DIR="$HOME/dev"
+export SHARE_DIR="$HOME/share"
 

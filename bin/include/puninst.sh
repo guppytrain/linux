@@ -3,15 +3,14 @@
 # package manager specific install
 
 if [ $# = 0 ]; then
-	echo $"Usage: pinst.sh <arg list>"
+	echo $"Usage: puninst.sh <arg list>"
 	exit 1
 fi
 
 if [ -n "$(which apt)" ]; then
-	sudo apt-get install "$@"
+	sudo apt-get purge "$@"
 elif [ -n "$(which pacman)" ]; then
-	# --needed only does reinstall if needed
-	sudo pacman -Sy --needed "$@"
+	sudo pacman -Rns "$@"
 elif [ -n "$(which apk)" ]; then
-	sudo apk add "$@"
+	sudo apk del --purge "$@"
 fi

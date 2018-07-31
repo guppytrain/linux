@@ -26,6 +26,8 @@ if [ -z "$SHARED_PROFILE" ]; then
 	    . "$SHARE_DIR/etc/.common_aliases"
 	fi
 
+	unset addpath
+
 	SHARED_PROFILE="true"
 # else
 	# echo "Shared profile already set, ignore."
