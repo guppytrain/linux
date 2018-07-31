@@ -5,6 +5,14 @@
 cd "$CWH/bin"
 
 # make sure folders exist
+if [ ! -d "$DOWNLOAD_DIR" ]; then
+	mkdir "$DOWNLOAD_DIR"
+fi
+
+if [ ! -d "$CLEAN_DIR" ]; then
+	mkdir "$CLEAN_DIR"
+fi
+
 if [ ! -d "$SHARE_DIR" ]; then
 	mkdir "$SHARE_DIR"
 fi
