@@ -1,13 +1,17 @@
 #!/bin/sh
 
-PATH="$HOME/dev/linux/bin/include:$PATH"
+# source the env vars
+. ./env.sh
 
-cd "$HOME/dev/linux/bin/include"
+# echo "PATH: $PATH"
 
-./pupdate.sh
+# pupdate.sh
+
+# zsh
+zsh_install.sh
 
 # vim
-./pinst.sh vim
+# pinst.sh vim
 
 # google chrome
 
