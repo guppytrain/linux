@@ -2,8 +2,6 @@
 
 CWH="$(cd ..; pwd)"
 
-echo "$CWH"
-
 . "$CWH/bin/addpath.sh"
 
 # PATH="$CWH/bin:/$CWH/bin/include:$PATH"
