@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CWH="$(cd ..; pwd)"
+export CWH="$(cd ..; pwd)"
 
 . "$CWH/bin/addpath.sh"
 
@@ -27,6 +27,7 @@ if [ -d "$DISTRO_DIR" ]; then
 	PATH="$DISTRO_DIR:$PATH"
 fi
 
-DEV_DIR="$HOME/dev"
+export DEV_DIR="$HOME/dev"
 
+export PATH
 
