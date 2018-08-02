@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# ensure $HOME
+if [ -z "$HOME" ]; then
+	export HOME="$(cd ~; pwd)"
+fi
+
+# define current working script home
 export CWH="$(cd ..; pwd)"
 
 . "$CWH/bin/util/addpath.sh"
