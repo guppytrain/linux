@@ -4,13 +4,16 @@
 . ./include/env.sh
 
 # echo "PATH: $PATH"
- pupdate.sh
+pupdate.sh
 
 # zsh
- zsh_install.sh
+zsh_install.sh
+
+# curl
+pinst.sh -y curl
 
 # vim
- pinst.sh -y vim
+pinst.sh -y vim
 
 # jdk
 jdk_install.sh
