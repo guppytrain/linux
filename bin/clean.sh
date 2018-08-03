@@ -8,6 +8,10 @@ if [ -f "$HOME/.share_profile" ]; then
 	rm "$HOME/.share_profile"
 fi
 
+if [ -f "$HOME/.inputrc" ]; then
+	rm "$HOME/.inputrc"
+fi
+
 if [ -f "$CLEAN_DIR/.profile" ]; then
 	cp -f "$CLEAN_DIR/.profile" "$HOME/.profile"
 fi

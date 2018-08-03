@@ -71,6 +71,13 @@ if [ -z "$match3" ] && [ -f "$HOME/.bashrc" ]; then
 	printf "\n%s\n%s\n" "# include .share_profile if it exists" "[[ -f \"$HOME/.share_profile\" ]] && . \"$HOME/.share_profile\"" >> $HOME/.bashrc
 fi
 
+default_inputrc="/etc/inputrc"
+
+if [ -f "$default_inputrc" ]; then
+	echo "Creating updated inputrc"
+	sed -n 'p' "$default_inputrc" "$CWH/etc/.inputrc" > "$HOME/.inputrc"
+fi
+
 # copy over etc and bin files
 echo "Copying bin and etc files"
 
