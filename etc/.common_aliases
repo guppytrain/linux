@@ -3,6 +3,7 @@
 # clear n reset
 alias c="clear"
 alias r="reset"
+alias cr="clear; reset"
 
 ## Colorize the ls output ##
 alias ls='ls --color=auto'
