@@ -8,9 +8,15 @@ fi
 
 export NVM_DIR="$HOME/.nvm"
 
-if [ -d "$NVM_DIR" ] && [ -z "$(ls -A $NVM_DIR)" ]; then
-	git clone https://github.com/creationix/nvm.git "$NVM_DIR"
-    	cd "$NVM_DIR"
+if [ -d "$NVM_DIR" ]; then
+	cd "$NVM_DIR"
+	
+	if [ -z "$(git status)" ] && [ -z "$(ls -A ".git")" ]; then
+		git clone https://github.com/creationix/nvm.git "$NVM_DIR"
+	else
+		git fetch --tags origin
+	fi
+    	
       	git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
 	
 	. "$NVM_DIR/nvm.sh"
@@ -48,7 +54,6 @@ if [ -f "$nvmrc_file" ]; then
 			printf "\n%s\n%s\n" "# include .nvmrc if it exists" "[[ -f \"$SHARE_DIR/etc/.nvmrc\" ]] && . \"$SHARE_DIR/etc/.nvmrc\"" >> $HOME/.zshrc
 		fi
 	fi
-
 fi
 
 
