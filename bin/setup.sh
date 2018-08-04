@@ -25,18 +25,18 @@ if [ ! -d "$SHARE_DIR/etc" ]; then
 	mkdir "$SHARE_DIR/etc"
 fi
 
-# build the .share_profile file, remove existing if any
-share_file="$HOME/.share_profile"
+# build the .share_profile file
+# remove existing if any
+share_file="$SHARE_DIR/etc/.share_profile"
 
 if [ -f $share_file ]; then
 	echo "Removing user share_profile"
 
-	rm "$HOME/.share_profile"
+	rm "$SHARE_DIR/etc/.share_profile"
 fi
 
-
 echo "Building new share_profile"
-printf "%s\n%s\n" "SHARE_DIR=\"$SHARE_DIR\"" "$(cat $CWH/etc/.share_profile)" > "$HOME/.share_profile"
+printf "%s\n%s\n" "SHARE_DIR=\"$SHARE_DIR\"" "$(cat $CWH/etc/.share_profile)" > "$SHARE_DIR/etc/.share_profile"
 
 # include share_profile in .profile
 match="$(cat $HOME/.profile | grep '.share_profile')"
@@ -46,7 +46,7 @@ if [ -z "$match" ] && [ -f "$HOME/.profile" ]; then
 
 	echo "Including share_profile in profile"
 
-	printf "\n%s\n%s\n" "# include .share_profile if it exists" "if [ -f \"$HOME/.share_profile\" ]; then . \"$HOME/.share_profile\"; fi" >> $HOME/.profile
+	printf "\n%s\n%s\n" "# include .share_profile if it exists" "[[ -f \"$SHARE_DIR/etc/.share_profile\" ]] && . \"$SHARE_DIR/etc/.share_profile\"" >> $HOME/.profile
 fi
 
 # include share_profile in .bash_profile
@@ -57,7 +57,7 @@ if [ -z "$match2" ] && [ -f "$HOME/.bash_profile" ]; then
 
 	echo "Including share_profile in bash_profile"
 
-	printf "\n%s\n%s\n" "# include .share_profile if it exists" "if [ -f \"$HOME/.share_profile\" ]; then . \"$HOME/.share_profile\"; fi" >> $HOME/.bash_profile
+	printf "\n%s\n%s\n" "# include .share_profile if it exists" "[[ -f \"$SHARE_DIR/etc/.share_profile\" ]] && . \"$SHARE_DIR/etc/.share_profile\"" >> $HOME/.bash_profile
 fi
 
 # include share_profile in .bashrc
@@ -68,7 +68,7 @@ if [ -z "$match3" ] && [ -f "$HOME/.bashrc" ]; then
 
 	echo "Including share_profile in bash_profile"
 
-	printf "\n%s\n%s\n" "# include .share_profile if it exists" "[[ -f \"$HOME/.share_profile\" ]] && . \"$HOME/.share_profile\"" >> $HOME/.bashrc
+	printf "\n%s\n%s\n" "# include .share_profile if it exists" "[[ -f \"$SHARE_DIR/etc/.share_profile\" ]] && . \"$SHARE_DIR/etc/.share_profile\"" >> $HOME/.bashrc
 fi
 
 default_inputrc="/etc/inputrc"
@@ -82,9 +82,8 @@ fi
 echo "Copying bin and etc files"
 
 cp -f "$CWH/bin/util/addpath.sh" "$SHARE_DIR/bin/."
-cp -f "$CWH/bin/util/sd.sh" "$SHARE_DIR/bin/."
 cp -f "$CWH/bin/util/setjava.sh" "$SHARE_DIR/bin/."
+cp -f "$CWH/bin/util/sd.sh" "$SHARE_DIR/bin/."
 
 cp -f "$CWH/etc/.common_aliases" "$SHARE_DIR/etc/."
 cp -f "$CWH/etc/.common_env" "$SHARE_DIR/etc/."
-

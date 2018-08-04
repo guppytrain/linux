@@ -4,8 +4,8 @@
 . ./include/env.sh
 
 # restore prev files
-if [ -f "$HOME/.share_profile" ]; then
-	rm "$HOME/.share_profile"
+if [ -f "$SHARE_DIR/etc/.share_profile" ]; then
+	rm "$SHARE_DIR/etc/.share_profile"
 fi
 
 if [ -f "$HOME/.inputrc" ]; then
@@ -42,7 +42,9 @@ zsh_remove.sh
 puninst.sh -y vim
 
 # jdk
-#jdk_remove.sh
+jdk_remove.sh
 
+# nvm
+nvm_remove.sh
 
 echo "Exit terminal to refresh settings"

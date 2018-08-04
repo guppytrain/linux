@@ -5,8 +5,24 @@ if [ -z "$HOME" ]; then
 	export HOME="$(cd ~; pwd)"
 fi
 
+export DEV_DIR="$HOME/dev"
+export SHARE_DIR="$HOME/share"
+
+if [ ! -d "$DEV_DIR" ] || [ ! -d "$SHARE_DIR" ]; then
+	echo "~/dev and/or ~/share do not exist.  Exiting..."
+	sleep 10
+	exit 1
+fi
+
 # define current working script home
-export CWH="$(cd ..; pwd)"
+# export CWH="$(cd ..; pwd)"
+export CWH="$(find $DEV_DIR -name ".CWH" -printf "%h")"
+
+if [ ! -d "$CWH" ]; then
+	echo "Could not determine CWH.  Exiting..."
+	sleep 10
+	exit 1
+fi
 
 . "$CWH/bin/util/addpath.sh"
 
@@ -32,14 +48,11 @@ fi
 DISTRO_DIR="$CWH/bin/include/$DISTRO"
 
 if [ -d "$DISTRO_DIR" ]; then
-	PATH="$DISTRO_DIR:$PATH"
+	# PATH="$DISTRO_DIR:$PATH"
+	addpath "$DISTRO_DIR"
 fi
 
 export PATH
 
 export CLEAN_DIR="$CWH/bin/.clean"
 export DOWNLOAD_DIR="$CWH/bin/.download"
-
-export DEV_DIR="$HOME/dev"
-export SHARE_DIR="$HOME/share"
-

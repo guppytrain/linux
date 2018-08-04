@@ -18,3 +18,7 @@ pinst.sh -y vim
 # jdk
 jdk_install.sh
 
+# nvm
+nvm_install.sh
+
+
