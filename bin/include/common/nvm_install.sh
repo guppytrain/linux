@@ -54,6 +54,11 @@ if [ -f "$nvmrc_file" ]; then
 			printf "\n%s\n%s\n" "# include .nvmrc if it exists" "[[ -f \"$SHARE_DIR/etc/.nvmrc\" ]] && . \"$SHARE_DIR/etc/.nvmrc\"" >> $HOME/.zshrc
 		fi
 	fi
+
+	echo "Copying npm completion to share folder"
+	
+	cp "$CWH/etc/npm_completion" "$SHARE_DIR/etc/npm_completion" 
+
 fi
 
 
