@@ -1,1 +1,1 @@
-# linux related utilies and functions
+# linux related utilies and functions for dev and docker related profiles
