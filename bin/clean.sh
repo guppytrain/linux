@@ -35,16 +35,4 @@ if [ -d "$SHARE_DIR/etc" ]; then
 	rm "$SHARE_DIR/etc/.common_aliases"
 fi
 
-# zsh
-zsh_remove.sh
-
-# vim
-puninst.sh -y vim
-
-# jdk
-jdk_remove.sh
-
-# nvm
-nvm_remove.sh
-
 echo "Exit terminal to refresh settings"
