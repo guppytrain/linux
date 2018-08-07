@@ -39,7 +39,8 @@ echo "Building new share_profile"
 printf "%s\n%s\n" "SHARE_DIR=\"$SHARE_DIR\"" "$(cat $CWH/etc/.share_profile)" > "$SHARE_DIR/etc/.share_profile"
 
 # include share_profile in .profile
-match="$(cat $HOME/.profile | grep '.share_profile')"
+#match="$(cat $HOME/.profile | grep '.share_profile')"
+match="$(cat $HOME/.profile | egrep -o "\s?\.\s[\"\']?$SHARE_DIR/etc/.share_profile[\"\']")"
 
 if [ -z "$match" ] && [ -f "$HOME/.profile" ]; then 
 	cp "$HOME/.profile" "$CLEAN_DIR/.profile"
@@ -50,8 +51,9 @@ if [ -z "$match" ] && [ -f "$HOME/.profile" ]; then
 fi
 
 # include share_profile in .bash_profile
-match2="$(cat $HOME/.bash_profile | grep '.share_profile')"
-
+# match2="$(cat $HOME/.bash_profile | grep '.share_profile')"
+match2="$(cat $HOME/.bash_profile | egrep -o "\s?\.\s[\"\']?$SHARE_DIR/etc/.share_profile[\"\']")"
+                                  
 if [ -z "$match2" ] && [ -f "$HOME/.bash_profile" ]; then 
 	cp "$HOME/.bash_profile" "$CLEAN_DIR/.bash_profile"
 
@@ -61,7 +63,8 @@ if [ -z "$match2" ] && [ -f "$HOME/.bash_profile" ]; then
 fi
 
 # include share_profile in .bashrc
-match3="$(cat $HOME/.bashrc | grep '.share_profile')"
+# match3="$(cat $HOME/.bashrc | grep '.share_profile')"
+match3="$(cat $HOME/.bashrc | egrep -o "\s?\.\s[\"\']?$SHARE_DIR/etc/.share_profile[\"\']")"
 
 if [ -z "$match3" ] && [ -f "$HOME/.bashrc" ]; then
 	cp "$HOME/.bashrc" "$CLEAN_DIR/.bashrc"

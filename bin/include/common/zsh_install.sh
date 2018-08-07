@@ -17,7 +17,8 @@ share_file="$SHARE_DIR/etc/.share_profile"
 
 if [ -f $share_file ]; then
 	# include share_profile in .bashrc
-	match4="$(cat $HOME/.zshrc | grep '.share_profile')"
+	# match4="$(cat $HOME/.zshrc | grep '.share_profile')"
+	match4="$(cat $HOME/.zshrc | egrep -o "\s?\.\s[\"\']?$SHARE_DIR/etc/.share_profile[\"\']")" 
 
 	if [ -z "$match4" ] && [ -f "$HOME/.zshrc" ]; then
 		echo "Including share_profile in zsh_profile"

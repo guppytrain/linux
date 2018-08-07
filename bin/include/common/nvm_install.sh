@@ -19,7 +19,9 @@ if [ -d "$NVM_DIR" ]; then
     	
       	git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
 	
-	. "$NVM_DIR/nvm.sh"
+	\. "$NVM_DIR/nvm.sh"
+
+	nvm install node --latest-npm
 fi
 
 # add nvm.sh to needed files
@@ -34,15 +36,26 @@ if [ -f "$nvmrc_file" ]; then
 	echo "Including .nvmrc in profile"
 
 	if [ -f "$HOME/.profile" ]; then
-		if [ -z "$(cat $HOME/.profile | grep '.nvmrc')" ]; then
+		# if [ -z "$(cat $HOME/.profile | grep '.nvmrc')" ]; then
+		if [ -z "$(cat $HOME/.profile | egrep -o "\s?\.\s[\"\']?$SHARE_DIR/etc/.nvmrc[\"\']")" ]; then
 			printf "\n%s\n%s\n" "# include .nvmrc if it exists" "[[ -f \"$SHARE_DIR/etc/.nvmrc\" ]] && . \"$SHARE_DIR/etc/.nvmrc\"" >> $HOME/.profile
+		fi
+	fi
+
+	echo "Including .nvmrc in bash profile"
+
+	if [ -f "$HOME/.bash_profile" ]; then
+		# if [ -z "$(cat $HOME/.bash_profile | grep '.nvmrc')" ]; then
+		if [ -z "$(cat $HOME/.bash_profile | egrep -o "\s?\.\s[\"\']?$SHARE_DIR/etc/.nvmrc[\"\']")" ]; then
+			printf "\n%s\n%s\n" "# include .nvmrc if it exists" "[[ -f \"$SHARE_DIR/etc/.nvmrc\" ]] && . \"$SHARE_DIR/etc/.nvmrc\"" >> $HOME/.bash_profile
 		fi
 	fi
 
 	echo "Including .nvmrc in bashrc"
 
 	if [ -f "$HOME/.bashrc" ]; then
-		if [ -z "$(cat $HOME/.bashrc | grep '.nvmrc')" ]; then
+		# if [ -z "$(cat $HOME/.bashrc | grep '.nvmrc')" ]; then
+		if [ -z "$(cat $HOME/.bashrc | egrep -o "\s?\.\s[\"\']?$SHARE_DIR/etc/.nvmrc[\"\']")" ]; then
 			printf "\n%s\n%s\n" "# include .nvmrc if it exists" "[[ -f \"$SHARE_DIR/etc/.nvmrc\" ]] && . \"$SHARE_DIR/etc/.nvmrc\"" >> $HOME/.bashrc
 		fi
 	fi
@@ -50,7 +63,8 @@ if [ -f "$nvmrc_file" ]; then
 	echo "Including .nvmrc in zshrc"
 
 	if [ -f "$HOME/.zshrc" ]; then
-		if [ -z "$(cat $HOME/.zshrc | grep '.nvmrc')" ]; then
+		# if [ -z "$(cat $HOME/.zshrc | grep '.nvmrc')" ]; then
+		if [ -z "$(cat $HOME/.zshrc | egrep -o "\s?\.\s[\"\']?$SHARE_DIR/etc/.nvmrc[\"\']")" ]; then
 			printf "\n%s\n%s\n" "# include .nvmrc if it exists" "[[ -f \"$SHARE_DIR/etc/.nvmrc\" ]] && . \"$SHARE_DIR/etc/.nvmrc\"" >> $HOME/.zshrc
 		fi
 	fi
@@ -58,7 +72,6 @@ if [ -f "$nvmrc_file" ]; then
 	echo "Copying npm completion to share folder"
 	
 	cp "$CWH/etc/npm_completion" "$SHARE_DIR/etc/npm_completion" 
-
 fi
 
 
