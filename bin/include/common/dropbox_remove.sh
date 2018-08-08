@@ -8,14 +8,17 @@ if [ -f "$SHARE_DIR/bin/dropboxy.py" ]; then
 	"$SHARE_DIR/bin/dropbox.py stop"
 fi
 
-sleep 10
+sleep 30
 
-DBX_IP1="$(ps -ef | egrep "/dropbox$" | egrep -o "[0-9]{3,}" | sed -n '1 p')"
-DBX_IP2="$(ps -ef | egrep "/dropbox$" | sed -n 's/[[:blank:]]\+/\n/gp' | sed -n '2p')"
+DBX_PID="$(ps aux | egrep '/[d]ropbox$' | awk '{print $2}')"
+# DBX_PID="$(ps -ef | egrep "/dropbox$" | egrep -o "[0-9]{3,}" | sed -n '1 p')"
+# DBX_PID="$(ps -ef | egrep "/dropbox$" | sed -n 's/[[:blank:]]\+/\n/gp' | sed -n '2p')"
 
-if [ "$DBX_IP1" = "$DBX_IP2" ]; then
-	echo "Killing dropbox process..."
-	kill -9 "$DBX_IP1"
+echo "Checking dropbox process: $DBX_PID"
+	
+if [ -n "$DBX_PID" ]; then
+	echo "Killing dropbox process: $DBX_PID"
+	kill -9 "$DBX_PID"
 fi
 
 sleep 2
