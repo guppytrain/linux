@@ -24,7 +24,7 @@ if [ -d "$NVM_DIR" ]; then
 	nvm install node --latest-npm
 fi
 
-# add nvm.sh to needed files
+# source nvmrc in startup files
 
 nvmrc_file="$CWH/etc/.nvmrc"
 
