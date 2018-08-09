@@ -128,7 +128,7 @@ set cursorline
 "Show line numbers on the sidebar.
 set number
 "Show line number on the current line and relative numbers on all other lines.
-set relativenumber
+" set relativenumber
 "Disable beep on errors.
 set noerrorbells
 "Flash the screen instead of beeping on errors.
