@@ -148,4 +148,5 @@ alias gotolinux="cd ~/dev/linux"
 alias gotolinuxtest="cd ~/dev/linux/bin/test"
 alias gotolinuxcommon="cd ~/dev/linux/bin/include/common"
 alias gotodocker="cd ~/dev/docker"
+alias gototmp="cd ~/tmp"
 

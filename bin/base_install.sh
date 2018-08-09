@@ -12,6 +12,9 @@ zsh_install.sh
 # curl
 pinst.sh -y curl
 
+# python
+pinst.sh -y python
+
 # vim
 pinst.sh -y vim
 
