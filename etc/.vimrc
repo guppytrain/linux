@@ -174,6 +174,6 @@ set nrformats-=octal
 "The shell used to execute commands.
 set shell=/bin/bash
 "Enable spellchecking.
-set spell
+" set spell
 "Ignore files matching these patterns when opening files based on a glob pattern.
 set wildignore+=.pyc,.swp
