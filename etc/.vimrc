@@ -1,69 +1,4 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
- Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-
-" ======= START PLUGINS ===============
-" badwolf is a vim colorscheme put together by Steve Losh.
-Plugin 'sjl/badwolf'
-
-" ctrlp is a fuzzy file and buffer finder that shows up above the vim status bar when you’re trying to find or edit another file.
-Plugin 'ctrlpvim/ctrlp.vim'
-
-" tcomment_vim is a syntax-aware plugin for easy commenting. It’s so great and might be my most-used plugin.
-Plugin 'tomtom/tcomment_vim'
-
-" vim-indent-guides provides visual indicators of the indent level of each line in a file.
-Plugin 'nathanaelkane/vim-indent-guides'
-
-" scratch plugin
-Plugin 'mtth/scratch.vim'
-
-" ------- END PLUGINS -----------------
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-" To install from command line: vim +PluginInstall +qall
-
-
-" Extra Vim Settings
+" Vim Settings
 "Edit Options
 "New lines inherit the indentation of previous lines.
 set autoindent
@@ -174,6 +109,10 @@ set nrformats-=octal
 "The shell used to execute commands.
 set shell=/bin/bash
 "Enable spellchecking.
-" set spell
+"set spell
 "Ignore files matching these patterns when opening files based on a glob pattern.
 set wildignore+=.pyc,.swp
+
+so $HOME/.vim/plugins.vim
+so $HOME/.vim/keymaps.vim
+
