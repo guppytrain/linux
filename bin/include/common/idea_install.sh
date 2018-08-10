@@ -20,5 +20,5 @@ if [ -f "$IDEA_DIR/$filename" ]; then
 	# tag the install dir with a marker file
 	sudo touch "$dest_dir/$install_dir/.IDEA_HOME"
 else
-	echo "Could not find $filename"
+	echo "Could not find $IDEA_DIR/$filename"
 fi
