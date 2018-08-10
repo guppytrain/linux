@@ -79,6 +79,9 @@ default_inputrc="/etc/inputrc"
 if [ -f "$default_inputrc" ]; then
 	echo "Creating updated inputrc"
 	sed -n 'p' "$default_inputrc" "$CWH/etc/.inputrc" > "$HOME/.inputrc"
+else
+	echo "Copying inputrc to $HOME"
+	cp "$CWH/etc/.inputrc" "$HOME/."
 fi
 
 # copy over etc and bin files
