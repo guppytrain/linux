@@ -1,5 +1,5 @@
 # print out variable values in a "eager to find anything that matches" manner
-ev () 
+pv () 
 {
     # echo "Handling \$1=\"$1\""
 
