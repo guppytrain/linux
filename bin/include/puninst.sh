@@ -12,5 +12,5 @@ if [ -n "$(which apt)" ]; then
 elif [ -n "$(which pacman)" ]; then
 	sudo pacman -Rns "$@"
 elif [ -n "$(which apk)" ]; then
-	sudo apk del --purge "$@"
+	apk del --purge "$@"
 fi

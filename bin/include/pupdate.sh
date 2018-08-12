@@ -7,5 +7,5 @@ if [ -n "$(which apt)" ]; then
 elif [ -n "$(which pacman)" ]; then
 	sudo pacman -Sy
 elif [ -n "$(which apk)" ]; then
-	sudo apk update
+	apk update
 fi

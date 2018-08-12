@@ -13,5 +13,5 @@ elif [ -n "$(which pacman)" ]; then
 	# --needed only does reinstall if needed
 	sudo pacman -Sy --needed "$@"
 elif [ -n "$(which apk)" ]; then
-	sudo apk add "$@"
+	apk add "$@"
 fi
