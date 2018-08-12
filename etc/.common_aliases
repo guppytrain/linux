@@ -4,12 +4,8 @@
 alias c="clear"
 alias r="reset"
 alias cr="clear; reset"
-#alias rl="exec ${SHELL:-/bin/bash}"
-#alias rl="([[ -n "$(which bash)" ]] && exec bash) || ([[ -n "$SHELL" ]] && exec $SHELL) || exec sh"
-
-rl() {
-    ([[ -n "$(which bash)" ]] && exec bash) || ([[ -n "$SHELL" ]] && exec $SHELL) || exec sh
-}
+#alias rl="exec ${SHELL:-bash}"
+alias rl="if [ -n $(which bash) ]; then exec bash; else exec ${SHELL:-sh}; fi"
 
 ## Colorize the ls output ##
 alias ls='ls --color=auto'
