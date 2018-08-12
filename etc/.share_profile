@@ -6,7 +6,11 @@ if [ -z "$SHARED_PROFILE" ]; then
 		SHARE_DIR="$SHAREDIR"
 	fi
 
-	. $SHARE_DIR/bin/addpath.sh
+    # . $SHARE_DIR/bin/addpath.sh
+    for f in "$SHARE_DIR/bin/include/*"
+    do 
+        source $f 
+    done
 
 	if [ -d "$SHARE_DIR/bin" ] ; then
 		# echo "Adding share bin/ to path"
@@ -26,7 +30,7 @@ if [ -z "$SHARED_PROFILE" ]; then
 	    . "$SHARE_DIR/etc/.common_aliases"
 	fi
 
-	unset addpath
+	# unset addpath
 
 	SHARED_PROFILE="true"
 # else

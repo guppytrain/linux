@@ -17,8 +17,13 @@ if [ ! -d "$SHARE_DIR" ]; then
 	mkdir "$SHARE_DIR"
 fi
 
+# redundant, but for clarity safe
 if [ ! -d "$SHARE_DIR/bin" ]; then
 	mkdir "$SHARE_DIR/bin"
+fi
+
+if [ ! -d "$SHARE_DIR/bin/include" ]; then
+	mkdir "$SHARE_DIR/bin/include"
 fi
 
 if [ ! -d "$SHARE_DIR/etc" ]; then
@@ -87,9 +92,10 @@ fi
 # copy over etc and bin files
 echo "Copying bin and etc files"
 
-cp -f "$CWH/bin/util/addpath.sh" "$SHARE_DIR/bin/."
 cp -f "$CWH/bin/util/setjava.sh" "$SHARE_DIR/bin/."
 cp -f "$CWH/bin/util/sd.sh" "$SHARE_DIR/bin/."
+
+cp -f "$CWH/bin/util/include/*" "$SHARE_DIR/bin/include/."
 
 cp -f "$CWH/etc/.common_aliases" "$SHARE_DIR/etc/."
 cp -f "$CWH/etc/.common_env" "$SHARE_DIR/etc/."
