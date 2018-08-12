@@ -7,10 +7,7 @@ if [ -z "$SHARED_PROFILE" ]; then
 	fi
 
     # . $SHARE_DIR/bin/addpath.sh
-    for f in "$SHARE_DIR/bin/include/*"
-    do 
-        source $f 
-    done
+    for f in $SHARE_DIR/bin/include/*; do source $f; done
 
 	if [ -d "$SHARE_DIR/bin" ] ; then
 		# echo "Adding share bin/ to path"

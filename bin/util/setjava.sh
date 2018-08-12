@@ -40,7 +40,7 @@ case "$1" in
             ;;
          
         *)
-            echo $"Usage: $0 {8|10}"
+            echo "Usage: $0 {8|10}"
             exit 1
  
 esac

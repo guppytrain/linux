@@ -25,7 +25,7 @@ if [ -f "$CLEAN_DIR/.bashrc" ]; then
 fi
 
 if [ -d "$SHARE_DIR/bin" ]; then
-	rm "$SHARE_DIR/bin/addpath.sh"
+	rm -rf "$SHARE_DIR/bin/include"
 	rm "$SHARE_DIR/bin/sd.sh"
 	rm "$SHARE_DIR/bin/setjava.sh"
 fi

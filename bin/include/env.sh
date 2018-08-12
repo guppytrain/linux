@@ -25,11 +25,12 @@ if [ ! -d "$CWH" ]; then
 	exit 1
 fi
 
-. "$CWH/bin/util/addpath.sh"
+. "$CWH/bin/util/include/addpath.sh"
 
 # PATH="$CWH/bin:/$CWH/bin/include:$PATH"
 addpath "$CWH/bin" 
 addpath "$CWH/bin/util" 
+addpath "$CWH/bin/util/include" 
 addpath "$CWH/bin/include" 
 addpath "$CWH/bin/include/common"
 

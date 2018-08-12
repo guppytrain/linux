@@ -147,10 +147,13 @@ alias sdesh="sd.sh 'esh' $1 $2 $3 $4 $5 $6 $7 $8"
 alias sdebash="sd.sh 'ebash' $1 $2 $3 $4 $5 $6 $7 $8"
 
 # shortcuts to frequent directories
+alias gototmp="cd ~/tmp"
+alias gotoshare="cd ~/share"
 alias gotodev="cd ~/dev"
+alias gotodocker="cd ~/dev/docker"
 alias gotolinux="cd ~/dev/linux"
+alias gotolinuxbin="cd ~/dev/linux/bin"
+alias gotolinuxutil="cd ~/dev/linux/bin/util"
 alias gotolinuxinstallers="cd ~/dev/linux/bin/installers"
 alias gotolinuxcommon="cd ~/dev/linux/bin/include/common"
-alias gotodocker="cd ~/dev/docker"
-alias gototmp="cd ~/tmp"
 

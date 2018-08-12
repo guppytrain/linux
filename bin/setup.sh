@@ -95,7 +95,7 @@ echo "Copying bin and etc files"
 cp -f "$CWH/bin/util/setjava.sh" "$SHARE_DIR/bin/."
 cp -f "$CWH/bin/util/sd.sh" "$SHARE_DIR/bin/."
 
-cp -f "$CWH/bin/util/include/*" "$SHARE_DIR/bin/include/."
+cp -rf "$CWH/bin/util/include/." "$SHARE_DIR/bin/include/."
 
 cp -f "$CWH/etc/.common_aliases" "$SHARE_DIR/etc/."
 cp -f "$CWH/etc/.common_env" "$SHARE_DIR/etc/."
