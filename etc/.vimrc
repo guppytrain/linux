@@ -1,7 +1,7 @@
 " Vim Settings
 "Edit Options
 "New lines inherit the indentation of previous lines.
-set autoindent
+"set autoindent
 "Convert tabs to spaces.
 set expandtab
 "Enable indentation rules that are file-type specific.
@@ -14,6 +14,8 @@ set shiftwidth=4
 set smarttab
 "Indent using four spaces.
 set tabstop=4
+" comment continuation; doesn't work
+" autocmd FileType * set formatoptions-=c formatoptions-=r formatoptions-=o
 
 "Search Options
 "Enable search highlighting.
@@ -61,7 +63,7 @@ set tabpagemax=50
 "Highlight the line currently under cursor.
 set cursorline
 "Show line numbers on the sidebar.
-set number
+" set number
 "Show line number on the current line and relative numbers on all other lines.
 " set relativenumber
 "Disable beep on errors.
@@ -69,7 +71,7 @@ set noerrorbells
 "Flash the screen instead of beeping on errors.
 set visualbell
 "Enable mouse for scrolling and resizing.
-set mouse=a
+"set mouse=a
 "Set the window’s title, reflecting the file currently being edited.
 set title
 "Use colors that suit a dark background.
@@ -103,7 +105,7 @@ set history=1000
 "Ignore file’s mode lines; use vimrc configurations instead.
 set nomodeline
 "Disable swap files.
-"set noswapfile
+set noswapfile
 "Interpret octal as decimal when incrementing numbers.
 set nrformats-=octal
 "The shell used to execute commands.

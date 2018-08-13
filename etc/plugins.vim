@@ -12,8 +12,8 @@ Plugin 'VundleVim/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
- Plugin 'tpope/vim-fugitive'
+" plugin on GitHub repo; fugitive.vim may very well be the best Git wrapper of all time.
+" Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -54,25 +54,25 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 
 " powerful completion tool for HTML, CSS and JavaScript which allows you to make dynamic completions from a shorthand expression
-Plugin 'mattn/emmet-vim'
+"Plugin 'mattn/emmet-vim'
 
 " popular plugin to display an interactive file tree view in a side panel
 Plugin 'scrooloose/nerdtree'
 
 " You’ve got to love multiple selections
-Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'terryma/vim-multiple-cursors'
 
 " a dozen core Unix file operations as Vim commands in the context of the current file
-Plugin 'tpope/vim-eunuch'
+"Plugin 'tpope/vim-eunuch'
 
 " motions to add, change or remove surrounding characters and strings in a variety of ways
-Plugin 'tpope/vim-surround'
+"Plugin 'tpope/vim-surround'
 
 " ALE (Asynchronous Lint Engine) is a comprehensive code analysis plugin for Vim
-Plugin 'w0rp/ale'
+"Plugin 'w0rp/ale'
 
 " scratch plugin
-Plugin 'mtth/scratch.vim'
+"Plugin 'mtth/scratch.vim'
 
 " ------- END PLUGINS -----------------
 
@@ -92,3 +92,10 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " To install from command line: vim +PluginInstall +qall
+
+" for linux distros that complain
+let $FZF_DEFAULT_COMMAND='find . -maxdepth 10 -type f,l -printf "%P\n"'
+"let $FZF_DEFAULT_COMMAND='find -maxdepth 10 -L'
+"let $FZF_DEFAULT_COMMAND='ag --depth 10 --hidden --ignore .git -f -g ""'
+
+let NERDTreeShowHidden=1
