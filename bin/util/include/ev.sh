@@ -7,9 +7,9 @@ ev ()
     local _b=${1,,}
     local _c=${1^}
    
-    local _va=$(eval "echo ${a/#/$}")
-    local _vb=$(eval "echo ${b/#/$}")
-    local _vc=$(eval "echo ${c/#/$}")
+    local _va=$(eval "echo ${_a/#/$}")
+    local _vb=$(eval "echo ${_b/#/$}")
+    local _vc=$(eval "echo ${_c/#/$}")
 
     local _v=
 

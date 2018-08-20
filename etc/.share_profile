@@ -1,3 +1,5 @@
+export DEV_DIR="$HOME/dev" 
+export SHARE_DIR="$HOME/share"
 
 if [ -z "$SHARED_PROFILE" ]; then
 	# echo "Setting up shared profile"
@@ -7,6 +9,7 @@ if [ -z "$SHARED_PROFILE" ]; then
 	fi
 
     # . $SHARE_DIR/bin/addpath.sh
+    # include all scripts
     for f in $SHARE_DIR/bin/include/*; do source $f; done
 
 	if [ -d "$SHARE_DIR/bin" ] ; then
