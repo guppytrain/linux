@@ -24,7 +24,7 @@
 			echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
 			sudo docker container ls $2 $3 $4 $5 $6 $7 $8
 			;;
-		clsall)
+		call)
 			echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
 			sudo docker container ls --all
 			;;
