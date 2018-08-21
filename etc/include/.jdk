@@ -1,0 +1,17 @@
+if [ -d $JDK_INSTALL_HOME ]; then
+	export JDKDIR=$JDK_INSTALL_HOME
+	export JDK10_HOME="$JDKDIR/jdk-10.0.1"
+	export JDK8_HOME="$JDKDIR/jdk1.8.0_171"
+	export JDK_HOME="$JDKDIR/current"
+	export JAVA_HOME="$JDK_HOME"
+	export J2SDKDIR="$JAVA_HOME"
+	export J2REDIR="$JAVA_HOME/jre"
+	export DERBY_HOME="$JAVA_HOME/db" 
+
+	# PATH="$PATH:$J2SDKDIR/bin:$J2REDIR/bin:$DERBY_HOME/bin"
+	addpath "$J2SDKDIR/bin" "tail"
+	addpath "$J2REDIR/bin" "tail"
+	addpath "$DERBY_HOME/bin" "tail"
+fi
+
+
