@@ -128,6 +128,8 @@ alias gadd="g add $@"
 alias gcm="g commit -m $@"
 
 # docker related
+alias dbld="../build.sh"
+alias dcln="../clean.sh"
 
 # sd.sh aliases
 # Usage: $0 {c|i|ils|cls|clsall|r|e|ri|ei|rsh|rbash|esh|ebash}
@@ -152,8 +154,15 @@ alias sdlatest="bash -C $HOME/dev/docker/docker.cmd"
 alias gototmp="cd ~/tmp"
 alias gotoshare="cd ~/share"
 alias gotodev="cd ~/dev"
+
+alias gotodocker="cd ~/dev/docker"
+alias gotoamazon="cd ~/dev/docker/amazon_dev"
+alias gotoalpine="cd ~/dev/docker/alpine_dev"
+alias gotodebian="cd ~/dev/docker/debian_dev"
+
 alias gotodocker="cd ~/dev/docker"
 alias gotolinux="cd ~/dev/linux"
+alias gotolinuxetc="cd ~/dev/linux/bin"
 alias gotolinuxbin="cd ~/dev/linux/bin"
 alias gotolinuxutil="cd ~/dev/linux/bin/util"
 alias gotolinuxinstallers="cd ~/dev/linux/bin/installers"
