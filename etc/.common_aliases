@@ -162,7 +162,7 @@ alias gotodebian="cd ~/dev/docker/debian_dev"
 
 alias gotodocker="cd ~/dev/docker"
 alias gotolinux="cd ~/dev/linux"
-alias gotolinuxetc="cd ~/dev/linux/bin"
+alias gotolinuxetc="cd ~/dev/linux/etc"
 alias gotolinuxbin="cd ~/dev/linux/bin"
 alias gotolinuxutil="cd ~/dev/linux/bin/util"
 alias gotolinuxinstallers="cd ~/dev/linux/bin/installers"
@@ -171,3 +171,5 @@ alias gotolinuxcommon="cd ~/dev/linux/bin/include/common"
 # todo
 alias todo="vim $HOME/share/TODO"
 
+# duso; strip sudo if not available
+alias duso="[ -z "$(which sudo)" ] && $DEV_DIR/linux/bin/util/rp.sh -a sudo $DEV_DIR/linux"
