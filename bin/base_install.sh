@@ -9,6 +9,9 @@ pupdate.sh
 # zsh
 zsh_install.sh
 
+# wget
+pinst.sh -y wget
+
 # curl
 pinst.sh -y curl
 
