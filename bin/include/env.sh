@@ -17,7 +17,8 @@ fi
 # define current working script home
 # export CWH="$(cd ..; pwd)"
 # export CWH="$(find $DEV_DIR -name ".CWH" -printf "%h")" # alpine chokes on -printf option
-export CWH="$(find $DEV_DIR -name ".CWH" -print | sed 's@/.CWH@@')"
+# export CWH="$(find $DEV_DIR -name ".CWH" -print | sed 's@/.CWH@@')"
+export CWH="$(find $DEV_DIR -name ".CWH" -print | sed -n '1s@/.CWH@@p')"
 
 if [ ! -d "$CWH" ]; then
 	echo "Could not determine CWH.  Exiting..."
