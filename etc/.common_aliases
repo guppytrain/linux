@@ -128,8 +128,8 @@ alias gadd="g add $@"
 alias gcm="g commit -m $@"
 
 # docker related
-alias dbld="../build.sh"
-alias dcln="../clean.sh"
+alias dbld="../build.sh $@"
+alias dcln="../clean.sh $@"
 
 # sd.sh aliases
 # Usage: $0 {c|i|ils|cls|clsall|r|e|ri|ei|rsh|rbash|esh|ebash}
@@ -148,7 +148,8 @@ alias sdrsh="sd.sh 'rsh' $1 $2 $3 $4 $5 $6 $7 $8"
 alias sdrbash="sd.sh 'rbash' $1 $2 $3 $4 $5 $6 $7 $8"
 alias sdesh="sd.sh 'esh' $1 $2 $3 $4 $5 $6 $7 $8"
 alias sdebash="sd.sh 'ebash' $1 $2 $3 $4 $5 $6 $7 $8"
-alias sdlatest="bash -C $HOME/dev/docker/docker.cmd"
+alias sdrunlatest="bash -C $HOME/dev/docker/cmds/run_latest.cmd"
+alias sdstartlatest="bash -C $HOME/dev/docker/cmds/start_latest.cmd"
 
 # shortcuts to frequent directories
 alias gototmp="cd ~/tmp"
