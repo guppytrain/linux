@@ -1,5 +1,15 @@
 #!/bin/sh
 
+# main folders
+export DEV_DIR="$HOME/dev"
+export SHARE_DIR="$HOME/share"
+
+if [ ! -d "$DEV_DIR" ] || [ ! -d "$SHARE_DIR" ]; then
+	echo "~/dev and/or ~/share do not exist.  Exiting..."
+	sleep 10
+	exit 1
+fi
+
 # define current working script home
 export CWH="$(find $DEV_DIR -name ".CWH" -print | sed -n '1s@/.CWH@@p')"
 
@@ -16,15 +26,6 @@ fi
 
 # include common config
 . "${CWH}/bin/include/CONFIG"
-
-export DEV_DIR="$HOME/dev"
-export SHARE_DIR="$HOME/share"
-
-if [ ! -d "$DEV_DIR" ] || [ ! -d "$SHARE_DIR" ]; then
-	echo "~/dev and/or ~/share do not exist.  Exiting..."
-	sleep 10
-	exit 1
-fi
 
 # package manager specific env detection of distro
 if [ -n "$(which apt)" ]; then
