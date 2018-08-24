@@ -10,7 +10,7 @@ else
 	exit 0
 fi
 
-dest_dir="/usr/local/jdk"
+dest_dir="/usr/lib/jvm"
 
 # extract file to destination
 if [ -d "$dest_dir" ]; then

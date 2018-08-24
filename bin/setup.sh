@@ -124,10 +124,10 @@ echo "Copying bin and etc files"
 
 cp -f "$CWH/bin/util/setjava.sh" "$SHARE_DIR/bin/."
 cp -f "$CWH/bin/util/sd.sh" "$SHARE_DIR/bin/."
+cp -f "$CWH/bin/util/rp.sh" "$SHARE_DIR/bin/."
 
 cp -rf "$CWH/bin/util/include/." "$SHARE_DIR/bin/include/."
-# path determined by jdk_install.sh
-# cp -rf "$CWH/etc/include/." "$SHARE_DIR/etc/include/."
+cp -rf "$CWH/etc/include/." "$SHARE_DIR/etc/include/." 
 
 cp -f "$CWH/etc/.common_aliases" "$SHARE_DIR/etc/."
 cp -f "$CWH/etc/.common_env" "$SHARE_DIR/etc/."

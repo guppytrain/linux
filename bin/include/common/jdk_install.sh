@@ -17,7 +17,7 @@ jdk_uri="https://www.dropbox.com/s/6ay7ktjs97vsne3/jdk-8u171-linux-x64.tar.gz?dl
 dest_dir="/usr/lib/jvm"
 #dest_dir="/usr/local/test"
 
-printf "%s\n\n%s\n" "JDK_INSTALL_HOME=$dest_dir" "$(cat $CWH/etc/include/.jdk)" > "$SHARE_DIR/etc/include/.jdk"
+printf "%s\n\n%s\n" "JDK_INSTALL_HOME=$dest_dir" "$(cat $CWH/etc/.jdk)" > "$SHARE_DIR/etc/include/.jdk"
 
 # download file, if not already downloaded
 if [ -f "$DOWNLOAD_DIR/$filename" ]; then
