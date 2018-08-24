@@ -9,7 +9,7 @@ fi
 
 if [ -n "$(which apt)" ]; then
 	sudo apt-get purge "$@"
-elif [ -n "$(which pacman)" ]; then
+elif [ -n "$(which yum)" ]; then
 	sudo pacman -Rns "$@"
 elif [ -n "$(which apk)" ]; then
 	apk del --purge "$@"

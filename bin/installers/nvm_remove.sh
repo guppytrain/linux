@@ -1,1 +1,1 @@
-. ../include/env.sh; ../include/common/nvm_remove.sh
+. ../include/env.sh; nvm_remove.sh

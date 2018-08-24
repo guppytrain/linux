@@ -1,1 +1,1 @@
-. ../include/env.sh; ../include/common/idea_remove.sh
+. ../include/env.sh; idea_remove.sh

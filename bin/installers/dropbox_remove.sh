@@ -1,1 +1,1 @@
-. ../include/env.sh; ../include/common/dropbox_remove.sh
+. ../include/env.sh; dropbox_remove.sh

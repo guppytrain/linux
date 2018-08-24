@@ -1,1 +1,1 @@
-. ../include/env.sh; ../include/common/docker_remove.sh
+. ../include/env.sh; docker_remove.sh
