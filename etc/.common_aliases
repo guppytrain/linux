@@ -168,6 +168,7 @@ alias gotolinuxbin="cd ~/dev/linux/bin"
 alias gotolinuxutil="cd ~/dev/linux/bin/util"
 alias gotolinuxinstallers="cd ~/dev/linux/bin/installers"
 alias gotolinuxcommon="cd ~/dev/linux/bin/include/common"
+alias gotolinuxdesktop="cd ~/dev/linux/bin/include/desktop"
 
 # todo
 alias todo="vim $HOME/share/TODO"
