@@ -1,4 +1,4 @@
-if [ -d $JDK_INSTALL_HOME ]; then
+if [ -n "$JDK_INSTALL_HOME" ] && [ -d "$JDK_INSTALL_HOME" ]; then
 	export JDKDIR=$JDK_INSTALL_HOME
 	export JDK10_HOME="$JDKDIR/jdk-10.0.1"
 	export JDK8_HOME="$JDKDIR/jdk1.8.0_171"
