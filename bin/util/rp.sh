@@ -67,7 +67,8 @@ while (( "$#" )); do
         while IFS= read -r -d $'\0'; do # the space after IFS= is meaningful
             # echo "File: $REPLY"
             files+=("$REPLY")
-        done < <(find "$1" -type l,f -not -path "*/\.git/*" -not -name "\.gitignore" -not -name "\.dockerignore" -print0)
+        # done < <(find "$1" -type l,f -not -path "*/\.git/*" -not -name "\.gitignore" -not -name "\.dockerignore" -print0)
+        done < <(find "$1" -type f -not -path "*/\.git/*" -not -name "\.gitignore" -not -name "\.dockerignore" -not -path "*/*\.tar\.*" -print0)
 
         for f in "${files[@]}"; do
             echo "Processing File: $f"
