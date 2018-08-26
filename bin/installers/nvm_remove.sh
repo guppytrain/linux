@@ -1,1 +1,1 @@
-. ../include/env.sh; nvm_remove.sh
+. ../include/env.sh; nvm_remove.sh "$@"

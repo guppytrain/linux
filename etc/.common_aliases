@@ -172,6 +172,7 @@ alias gotolinuxdesktop="cd ~/dev/linux/bin/include/desktop"
 
 # todo
 alias todo="vim $HOME/share/TODO"
+alias todopr="cat $HOME/share/TODO"
 
 # duso; strip sudo if not available
 alias duso="[ -z "$(which sudo)" ] && $DEV_DIR/linux/bin/util/rp.sh -a sudo $DEV_DIR/linux"

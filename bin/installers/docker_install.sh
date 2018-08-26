@@ -1,1 +1,1 @@
-. ../include/env.sh; docker_install.sh
+. ../include/env.sh; docker_install.sh "$@"

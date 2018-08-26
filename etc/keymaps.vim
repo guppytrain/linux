@@ -1,5 +1,5 @@
 " editing
-map <BACKSPACE> X
+" map <BACKSPACE> X
 
 " for fzp
 map ; :Files<CR>

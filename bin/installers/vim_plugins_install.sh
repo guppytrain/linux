@@ -1,1 +1,1 @@
-. ../include/env.sh; ../include/common/vim_plugins_install.sh
+. ../include/env.sh; vim_plugins_install.sh "$@"

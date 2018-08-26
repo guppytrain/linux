@@ -1,1 +1,1 @@
-. ../include/env.sh; jdk_remove.sh
+. ../include/env.sh; jdk_remove.sh "$@"

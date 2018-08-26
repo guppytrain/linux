@@ -1,8 +1,27 @@
-#!/bin/sh
+#!/bin/bash
+
+# include some utils
+. "$CWH/bin/util/include/sleepfor.sh"
+
+# get options
+while getopts "d" o; do
+    case "$o" in
+        d)
+            download_only=true
+            ;;
+        *)
+            echo "No options specified"
+            ;;
+    esac
+done
+
+shift $(( OPTIND-1 ))
+
+echo "download_only=\"${download_only}\""
 
 if [ -z "$DOWNLOAD_DIR" ] || [ ! -d "$DOWNLOAD_DIR" ]; then
 	echo "Download director is not defined, exiting..."
-	sleep 5
+	sleepfor 5
 	exit 0
 else
 	echo "Using download dir: $DOWNLOAD_DIR"
@@ -17,8 +36,6 @@ jdk_uri="https://www.dropbox.com/s/6ay7ktjs97vsne3/jdk-8u171-linux-x64.tar.gz?dl
 dest_dir="/usr/lib/jvm"
 #dest_dir="/usr/local/test"
 
-printf "%s\n\n%s\n" "JDK_INSTALL_HOME=$dest_dir" "$(cat $CWH/etc/.jdk)" > "$SHARE_DIR/etc/include/.jdk"
-
 # download file, if not already downloaded
 if [ -f "$DOWNLOAD_DIR/$filename" ]; then
 	echo "Using existing file: $filename"
@@ -27,9 +44,17 @@ else
 	wget -O "$DOWNLOAD_DIR/$filename" "$jdk_uri"
 fi
 
+if [ -n "${download_only}" ]; then
+    echo "Download only.  Exiting..."
+    sleepfor 3
+    exit 0
+fi
+
+printf "%s\n\n%s\n" "JDK_INSTALL_DIR=$dest_dir" "$(cat $CWH/etc/.jdk)" > "$SHARE_DIR/etc/include/.jdk"
+
 jdk_dir="$(tar tzf "$DOWNLOAD_DIR/$filename" | sed -e 's@/.*@@' | uniq)"
 
-# extract file to destination
+# ensure destination
 if [ ! -d "$dest_dir" ]; then
 	sudo mkdir "$dest_dir"
 fi

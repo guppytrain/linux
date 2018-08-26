@@ -1,1 +1,1 @@
-. ../include/env.sh; ../include/common/zsh_remove.sh
+. ../include/env.sh; zsh_remove.sh "$@"

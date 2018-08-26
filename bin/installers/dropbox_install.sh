@@ -1,1 +1,1 @@
-. ../include/env.sh; dropbox_install.sh
+. ../include/env.sh; dropbox_install.sh "$@"

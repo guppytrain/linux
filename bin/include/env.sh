@@ -1,12 +1,17 @@
 #!/bin/sh
 
+# ensure $HOME
+if [ -z "$HOME" ]; then
+	export HOME="$(cd ~; pwd)"
+fi
+
 # main folders
 export DEV_DIR="$HOME/dev"
 export SHARE_DIR="$HOME/share"
 
 if [ ! -d "$DEV_DIR" ] || [ ! -d "$SHARE_DIR" ]; then
 	echo "~/dev and/or ~/share do not exist.  Exiting..."
-	sleep 10
+	sleep 5
 	exit 1
 fi
 
@@ -15,13 +20,8 @@ export CWH="$(find $DEV_DIR -name ".CWH" -print | sed -n '1s@/.CWH@@p')"
 
 if [ ! -d "$CWH" ]; then
 	echo "Could not determine CWH.  Exiting..."
-	sleep 10
+	sleep 5
 	exit 1
-fi
-
-# ensure $HOME
-if [ -z "$HOME" ]; then
-	export HOME="$(cd ~; pwd)"
 fi
 
 # include common config
@@ -48,9 +48,10 @@ fi
 # include distro config
 . "${CWH}/bin/include/CONFIG.${DISTRO}"
 
-# build PATH
+# source utilities
 . "$CWH/bin/util/include/addpath.sh"
 
+# build PATH
 # PATH="$CWH/bin:/$CWH/bin/include:$PATH"
 addpath "$CWH/bin" 
 addpath "$CWH/bin/util" 
@@ -70,7 +71,7 @@ if [ -d "$DISTRO_INCLUDE" ]; then
 	addpath "$DISTRO_INCLUDE"
 fi
 
-# exports
+# more exports
 export PATH
 export CLEAN_DIR="$CWH/bin/.clean"
 export DOWNLOAD_DIR="$CWH/bin/.download"

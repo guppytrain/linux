@@ -1,1 +1,1 @@
-. ../include/env.sh; idea_activate.sh
+. ../include/env.sh; idea_activate.sh "$@"

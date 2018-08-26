@@ -1,42 +1,49 @@
 #!/bin/sh
 
+# not in the business of package mgmt, so just hardcode the paths here
+### START JDK HOMES
+
+JDK8_DIR_NAME="jdk1.8.0_171"
+JDK10_DIR_NAME="jdk-10.0.1"
+
+### END JDK HOMES
 
 echo "$0 $1"
 
-echo "JDKDIR: $JDKDIR"
+echo "JDK_DIR: $JDK_DIR"
 
-if [ -z ${JDKDIR} ] || [ ! -d ${JDKDIR} ]; then
-	echo "JDKDIR is undefined"
+if [ -z ${JDK_DIR} ] || [ ! -d ${JDK_DIR} ]; then
+	echo "JDK_DIR is undefined"
 	exit 1
 fi
 
 case "$1" in
         10)
-	    cd $JDKDIR
+	    cd $JDK_DIR
 	    pwd
 
-	    if [ -L "$JDKDIR/current" ]; then
-	     	echo "Removing current link to `readlink -f $JDKDIR/current`"
+	    if [ -L "$JDK_DIR/current" ]; then
+            echo "Removing current link to $(readlink -f $JDK_DIR/current)"
 		sudo rm current 
 		sync
     	    fi
 	   
-	    echo "Setting Java to 10.0.1"
-	    sudo ln -s jdk-10.0.1 current
+	    echo "Setting Java to ${JDK10_DIR_NAME}"
+	    sudo ln -s ${JDK10_DIR_NAME} current
             ;;
          
         8)
-	    cd $JDKDIR
+	    cd $JDK_DIR
 	    pwd
 
-	    if [ -L "$JDKDIR/current" ]; then
-	     	echo "Removing current link to `readlink -f $JDKDIR/current`"
+	    if [ -L "$JDK_DIR/current" ]; then
+            echo "Removing current link to $(readlink -f $JDK_DIR/current)"
 	    	sudo rm current
 		sync
 	    fi	
 
-	    echo "Setting Java to 1.8.0_171"
-	    sudo ln -s jdk1.8.0_171 current
+	    echo "Setting Java to ${JDK8_DIR_NAME}"
+	    sudo ln -s ${JDK8_DIR_NAME} current
             ;;
          
         *)
@@ -46,5 +53,5 @@ case "$1" in
 esac
 
 
-echo "Current symlink: `readlink -f $JDKDIR/current`"
+echo "Current symlink: $(readlink -f $JDK_DIR/current)"
 
