@@ -18,6 +18,8 @@ while getopts 'n' flag; do
   esac
 done
 
+shift $(( OPTIND-1 ))
+
 . ./include/env.sh
 
 cd "$CWH/bin"
