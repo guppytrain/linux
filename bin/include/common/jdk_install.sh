@@ -67,7 +67,7 @@ if [ -L "$dest_dir/current" ]; then
 	sudo rm "$dest_dir/current" 
 fi
 
-sudo tar -xzvf "$DOWNLOAD_DIR/$filename" -C "$dest_dir"
+sudo tar -xzf "$DOWNLOAD_DIR/$filename" -C "$dest_dir"
 
 sudo ln -s "$dest_dir/$jdk_dir" "$dest_dir/current"
 
