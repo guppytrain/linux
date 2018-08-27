@@ -33,12 +33,16 @@ if [ ! -d "$CLEAN_DIR" ]; then
 	mkdir "$CLEAN_DIR"
 fi
 
+# redundant, but for clarity safe
 # if [ ! -d "$SHARE_DIR" ]; then
 # 	mkdir "$SHARE_DIR"
 # fi
 
-# redundant, but for clarity safe
-if [ ! -d "$SHARE_DIR/bin" ]; then
+if [ ! -d "$SHARE_DIR/docker" ]; then
+	mkdir "$SHARE_DIR/docker"
+fi
+
+if [ "${IS_DESKTOP}" = true ] && [ ! -d "$SHARE_DIR/bin" ]; then
 	mkdir "$SHARE_DIR/bin"
 fi
 

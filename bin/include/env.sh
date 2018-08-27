@@ -43,6 +43,9 @@ fi
 IS_DESKTOP=false
 if [ -n "${DESKTOP_SESSION}" ]; then
     IS_DESKTOP=true
+
+    # include desktop config
+    . "${CWH}/bin/include/CONFIG.desktop"
 fi
 
 # include distro config
