@@ -17,4 +17,4 @@ map wsh :w<bar>sh<CR>
 map BO :%bd<bar>e#<bar>bd#
 
 " abbreviations
-iabbr cb; # [ ]
+iabbr cb; # [?]

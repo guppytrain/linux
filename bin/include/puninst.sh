@@ -10,7 +10,7 @@ fi
 if [ -n "$(which apt)" ]; then
 	sudo apt-get purge "$@"
 elif [ -n "$(which yum)" ]; then
-	sudo pacman -Rns "$@"
+	sudo yum remove "$@"
 elif [ -n "$(which apk)" ]; then
 	apk del --purge "$@"
 fi

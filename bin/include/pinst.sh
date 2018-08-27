@@ -10,7 +10,7 @@ fi
 if [ -n "$(which apt)" ]; then
 	sudo apt-get install "$@"
 elif [ -n "$(which yum)" ]; then
-	sudo pacman -Sy --needed "$@"
+	sudo yum install "$@"
 elif [ -n "$(which apk)" ]; then
 	apk add "$@"
 fi
