@@ -1,2 +1,8 @@
 # common config
-COMMON_CONFIG_LOADED=true
+export COMMON_CONFIG_LOADED=true
+
+# java
+# export JDK_FILENAME="jdk-8u171-linux-x64.tar.gz"
+export JDK_FILENAME="jdk-8u181-linux-x64.tar.gz"
+export JDK_URI="https://www.dropbox.com/s/6ay7ktjs97vsne3/jdk-8u171-linux-x64.tar.gz?dl=1"
+

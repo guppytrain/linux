@@ -1,3 +1,3 @@
 # common config
-DESKTOP_CONFIG_LOADED=true
+export DESKTOP_CONFIG_LOADED=true
 

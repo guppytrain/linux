@@ -28,27 +28,22 @@ else
 fi
 
 # set jdk info
-filename="jdk-8u171-linux-x64.tar.gz"
-jdk_uri="https://www.dropbox.com/s/6ay7ktjs97vsne3/jdk-8u171-linux-x64.tar.gz?dl=1"
-#jdk_uri="https://ucdfb278c0764de3b93e2ed6c6f3.dl.dropboxusercontent.com/cd/0/get/AMwtuEr9L5QDqja0LwM3wK0DxAi6qTdYtDlEKzqfZIpO1sxDdOmwp_WWquiMwKXerKdM3vxLP25IDIkBFdtqr8gFACCqAZ6Rly__sM2azKC4tQ0LM0gyNglpa-fe36kIDcv5qQoC4SSMG6JvYIOfVMnb2RON-z57TWRvE4LZiv-tOkXVmOYhCRNXKFpnBEPIHx4/file?dl=1"
-#jdk_uri="https://drive.google.com/uc?id=1sKtoo4eTON3NqZNPUmVdAVbbxpqJUznj&export=download"
 # dest_dir="/usr/local/jdk"
 dest_dir="/usr/lib/jvm"
-#dest_dir="/usr/local/test"
 
 # approach: if in share folder, use it; otherwise, download it, but do not copy it to the share folder after downloading
-if [ -f "$DOWNLOAD_DIR/$filename" ]; then
-    jdk_file_path="$DOWNLOAD_DIR/$filename"
+if [ -f "$DOWNLOAD_DIR/$JDK_FILENAME" ]; then
+    jdk_file_path="$DOWNLOAD_DIR/$JDK_FILENAME"
 else
-    jdk_file_path="${SHARE_DIR}/docker/$filename"
+    jdk_file_path="${SHARE_DIR}/docker/$JDK_FILENAME"
 fi
 
 # download file, if not already downloaded
 if [ -f "$jdk_file_path" ]; then
 	echo "Using existing file: $jdk_file_path"
 else
-	echo "About to download file: $filename"
-	wget -O "$DOWNLOAD_DIR/$filename" "$jdk_uri"
+	echo "About to download file: $JDK_FILENAME"
+	wget -O "$DOWNLOAD_DIR/$JDK_FILENAME" "$JDK_URI"
 fi
 
 if [ -n "${download_only}" ]; then

@@ -1,12 +1,12 @@
 #!/bin/sh
 
-# jdk info
-filename="jdk-8u171-linux-x64.tar.gz"
+# NOTE: does not delete the jar file
 
-if [ -f "$DOWNLOAD_DIR/$filename" ]; then
-    jdk_file_path="$DOWNLOAD_DIR/$filename"
+# jdk full path
+if [ -f "$DOWNLOAD_DIR/$JDK_FILENAME" ]; then
+    jdk_file_path="$DOWNLOAD_DIR/$JDK_FILENAME"
 else
-    jdk_file_path="${SHARE_DIR}/docker/$filename"
+    jdk_file_path="${SHARE_DIR}/docker/$JDK_FILENAME"
 fi
 
 
@@ -17,7 +17,7 @@ if [ -f "$jdk_file_path" ]; then
     
     echo "JDK folder name: $jdk_dir"
 else
-    echo "File not found: $filename"
+    echo "File not found: $JDK_FILENAME"
 	exit 0
 fi
 

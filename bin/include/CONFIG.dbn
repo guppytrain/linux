@@ -1,3 +1,3 @@
 # common config
-DEBIAN_CONFIG_LOADED=true
+export DEBIAN_CONFIG_LOADED=true
 
