@@ -37,18 +37,18 @@ dest_dir="/usr/lib/jvm"
 #dest_dir="/usr/local/test"
 
 # approach: if in share folder, use it; otherwise, download it, but do not copy it to the share folder after downloading
-if [ -f "${SHARE_DIR}/docker/$filename" ]; then
-    jdk_file_path="${SHARE_DIR}/docker/$filename"
-else
+if [ -f "$DOWNLOAD_DIR/$filename" ]; then
     jdk_file_path="$DOWNLOAD_DIR/$filename"
+else
+    jdk_file_path="${SHARE_DIR}/docker/$filename"
 fi
 
 # download file, if not already downloaded
 if [ -f "$jdk_file_path" ]; then
-	echo "Using existing file: $filename"
+	echo "Using existing file: $jdk_file_path"
 else
 	echo "About to download file: $filename"
-	wget -O "$jdk_file_path" "$jdk_uri"
+	wget -O "$DOWNLOAD_DIR/$filename" "$jdk_uri"
 fi
 
 if [ -n "${download_only}" ]; then
