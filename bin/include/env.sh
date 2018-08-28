@@ -24,7 +24,7 @@ if [ ! -d "$CWH" ]; then
 	exit 1
 fi
 
-# include common config
+# include common config; order matters
 . "${CWH}/bin/include/CONFIG"
 
 # package manager specific env detection of distro
@@ -44,14 +44,15 @@ IS_DESKTOP=false
 if [ -n "${DESKTOP_SESSION}" ]; then
     IS_DESKTOP=true
 
-    # include desktop config
+    # include desktop config; order matters, but not sure whether desktop or distro should be last
     . "${CWH}/bin/include/CONFIG.desktop"
 fi
 
-# include distro config
+# include distro config; order matters, but not sure whether desktop or distro should be last
 . "${CWH}/bin/include/CONFIG.${DISTRO}"
 
 # source utilities
+# NOTE: last path added get first priority
 . "$CWH/bin/util/include/addpath.sh"
 
 # build PATH
