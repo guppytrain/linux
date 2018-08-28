@@ -1,6 +1,6 @@
 #!/bin/sh
 
-pinst.sh -y zsh
+pinst.sh zsh
 
 cd $DEV_DIR
 

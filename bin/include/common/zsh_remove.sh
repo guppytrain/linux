@@ -1,6 +1,6 @@
 #!/bin/sh
 
-puninst.sh -y zsh
+puninst.sh zsh
 
 if [ -f "$HOME/.zshrc" ]; then
 	rm "$HOME/.zshrc"

@@ -8,9 +8,9 @@ if [ $# = 0 ]; then
 fi
 
 if [ -n "$(which apt)" ]; then
-	sudo apt-get install "$@"
+	sudo apt-get install -y "$@"
 elif [ -n "$(which yum)" ]; then
-	sudo yum install "$@"
+	sudo yum install -y "$@"
 elif [ -n "$(which apk)" ]; then
 	apk add "$@"
 fi

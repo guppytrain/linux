@@ -10,16 +10,16 @@ pupdate.sh
 zsh_install.sh
 
 # wget
-pinst.sh -y wget
+pinst.sh wget
 
 # curl
-pinst.sh -y curl
+pinst.sh curl
 
 # python
-pinst.sh -y python
+pinst.sh python
 
 # vim
-pinst.sh -y vim
+pinst.sh vim
 
 # jdk
 jdk_install.sh

@@ -8,9 +8,9 @@ if [ $# = 0 ]; then
 fi
 
 if [ -n "$(which apt)" ]; then
-	sudo apt-get purge "$@"
+	sudo apt-get purge -y "$@"
 elif [ -n "$(which yum)" ]; then
-	sudo yum remove "$@"
+	sudo yum remove -y "$@"
 elif [ -n "$(which apk)" ]; then
 	apk del --purge "$@"
 fi
