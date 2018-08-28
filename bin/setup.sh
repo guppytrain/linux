@@ -38,7 +38,7 @@ fi
 # 	mkdir "$SHARE_DIR"
 # fi
 
-if [ "${IS_DESKTOP}" = true ] && [ ! -d "$SHARE_DIR/bin" ]; then
+if [ ! -d "$SHARE_DIR/bin" ]; then
 	mkdir "$SHARE_DIR/bin"
 fi
 

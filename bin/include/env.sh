@@ -31,7 +31,7 @@ fi
 if [ -n "$(which apt)" ]; then
 	echo "Detected apt, assume debian"
 	DISTRO="dbn"
-elif [ -n "$(yum)" ]; then
+elif [ -n "$(which yum)" ]; then
 	echo "Detected yum, assume fedora/centos"
 	DISTRO="cos"
 elif [ -n "$(which apk)" ]; then
