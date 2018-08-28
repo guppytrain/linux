@@ -19,4 +19,13 @@ docker_base_install.sh && (
     done < <(echo "$CNTRS")
 
     sudo docker image rm "hello-world"
+
+    # create shared volume
+    if [ ! -d "${SHARE_DIR}/docker" ]; then
+        echo "Creating shared volume: "${SHARE_DIR}/docker""
+        mkdir -p "${SHARE_DIR}/docker"
+    else
+        echo "Reusing existing shared volume: "${SHARE_DIR}/docker""
+    fi
+
 )

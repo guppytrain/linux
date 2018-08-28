@@ -36,12 +36,19 @@ jdk_uri="https://www.dropbox.com/s/6ay7ktjs97vsne3/jdk-8u171-linux-x64.tar.gz?dl
 dest_dir="/usr/lib/jvm"
 #dest_dir="/usr/local/test"
 
+# approach: if in share folder, use it; otherwise, download it, but do not copy it to the share folder after downloading
+if [ -f "${SHARE_DIR}/docker/$filename" ]; then
+    jdk_file_path="${SHARE_DIR}/docker/$filename"
+else
+    jdk_file_path="$DOWNLOAD_DIR/$filename"
+fi
+
 # download file, if not already downloaded
-if [ -f "$DOWNLOAD_DIR/$filename" ]; then
+if [ -f "$jdk_file_path" ]; then
 	echo "Using existing file: $filename"
 else
 	echo "About to download file: $filename"
-	wget -O "$DOWNLOAD_DIR/$filename" "$jdk_uri"
+	wget -O "$jdk_file_path" "$jdk_uri"
 fi
 
 if [ -n "${download_only}" ]; then
@@ -52,7 +59,7 @@ fi
 
 printf "%s\n\n%s\n" "JDK_INSTALL_DIR=$dest_dir" "$(cat $CWH/etc/.jdk)" > "$SHARE_DIR/etc/include/.jdk"
 
-jdk_dir="$(tar tzf "$DOWNLOAD_DIR/$filename" | sed -e 's@/.*@@' | uniq)"
+jdk_dir="$(tar tzf "$jdk_file_path" | sed -e 's@/.*@@' | uniq)"
 
 # ensure destination
 if [ ! -d "$dest_dir" ]; then
@@ -67,7 +74,7 @@ if [ -L "$dest_dir/current" ]; then
 	sudo rm "$dest_dir/current" 
 fi
 
-sudo tar -xzf "$DOWNLOAD_DIR/$filename" -C "$dest_dir"
+sudo tar -xzf "$jdk_file_path" -C "$dest_dir"
 
 sudo ln -s "$dest_dir/$jdk_dir" "$dest_dir/current"
 
