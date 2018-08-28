@@ -161,6 +161,8 @@ alias gotoamazon="cd ~/dev/docker/amazon_dev"
 alias gotoalpine="cd ~/dev/docker/alpine_dev"
 alias gotodebian="cd ~/dev/docker/debian_dev"
 
+alias gotoplanter="cd ~/dev/planter"
+
 alias gotodocker="cd ~/dev/docker"
 alias gotolinux="cd ~/dev/linux"
 alias gotolinuxetc="cd ~/dev/linux/etc"
