@@ -29,4 +29,5 @@ if [ -f "$CWH/etc/keymaps.vim" ]; then
 	cp "$CWH/etc/keymaps.vim" "$VIM_DIR/." 
 fi
 
-
+# install fzf
+fzf_install.sh

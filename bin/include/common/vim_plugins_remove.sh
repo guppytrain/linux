@@ -16,3 +16,4 @@ if [ -d "$HOME/.vim/bundle" ]; then
 	rm -rf "$HOME/.vim/bundle"
 fi
 
+# NOTE: vim plugins install does install fzf, but this does not remove it since it's fine to leave it behind
