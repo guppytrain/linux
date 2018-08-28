@@ -18,3 +18,4 @@ map BO :%bd<bar>e#<bar>bd#
 
 " abbreviations
 iabbr cb; # [?]
+iabbr Mon 27 Aug 2018 05:06:21 PM PDT <C-R>=strftime("%c", localtime())<CR>
