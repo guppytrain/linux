@@ -3,10 +3,17 @@
 # jdk info
 filename="jdk-8u171-linux-x64.tar.gz"
 
-# download file, use it to figure out folder name for deletion
 if [ -f "$DOWNLOAD_DIR/$filename" ]; then
+    jdk_file_path="$DOWNLOAD_DIR/$filename"
+else
+    jdk_file_path="${SHARE_DIR}/docker/$filename"
+fi
+
+
+# download file, use it to figure out folder name for deletion
+if [ -f "$jdk_file_path" ]; then
     echo "Extracting to find jdk folder name"
-	jdk_dir="$(tar tzf "$DOWNLOAD_DIR/$filename" | sed -e 's@/.*@@' | uniq)"
+	jdk_dir="$(tar tzf "$jdk_file_path" | sed -e 's@/.*@@' | uniq)"
     
     echo "JDK folder name: $jdk_dir"
 else
