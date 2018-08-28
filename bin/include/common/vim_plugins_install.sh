@@ -31,3 +31,6 @@ fi
 
 # install fzf
 fzf_install.sh
+
+# install plugins in vim
+vim +PluginInstall +qall
