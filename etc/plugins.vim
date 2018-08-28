@@ -95,7 +95,7 @@ filetype plugin indent on    " required
 
 " for linux distros that complain
 let $FZF_DEFAULT_COMMAND='find . -maxdepth 10 -type f,l -printf "%P\n"'
-"let $FZF_DEFAULT_COMMAND='find -maxdepth 10 -L'
+"let $FZF_DEFAULT_COMMAND='find -maxdepth 10 -type f'
 "let $FZF_DEFAULT_COMMAND='ag --depth 10 --hidden --ignore .git -f -g ""'
 
 let NERDTreeShowHidden=1
