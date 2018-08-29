@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# NOTE: the install process installs vim, but not going to remove it here
+
 if [ -f "$HOME/.vimrc" ]; then
 	rm "$HOME/.vimrc"
 fi

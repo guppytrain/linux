@@ -1,7 +1,10 @@
 #!/bin/sh
 
+# vim
+pinst.sh vim
+
 if [ ! -d "$HOME/.vim" ]; then
-	echo "Creating new .nvm directory"
+	echo "Creating new .vim directory"
 
 	mkdir "$HOME/.vim"
 fi
