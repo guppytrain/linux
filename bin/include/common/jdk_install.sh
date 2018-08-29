@@ -44,6 +44,7 @@ if [ -f "$jdk_file_path" ]; then
 else
 	echo "About to download file: $JDK_FILENAME"
 	wget --progress=bar:force:noscroll -O "$DOWNLOAD_DIR/$JDK_FILENAME" "$JDK_URI"
+    jdk_file_path="$DOWNLOAD_DIR/$JDK_FILENAME"
 fi
 
 if [ -n "${download_only}" ]; then
