@@ -43,7 +43,7 @@ if [ -f "$jdk_file_path" ]; then
 	echo "Using existing file: $jdk_file_path"
 else
 	echo "About to download file: $JDK_FILENAME"
-	wget -O "$DOWNLOAD_DIR/$JDK_FILENAME" "$JDK_URI"
+	wget --progress=bar:force:noscroll -O "$DOWNLOAD_DIR/$JDK_FILENAME" "$JDK_URI"
 fi
 
 if [ -n "${download_only}" ]; then
