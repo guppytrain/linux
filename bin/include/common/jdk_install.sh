@@ -108,4 +108,5 @@ if [ "${PRUNE_JDK}" = true ]; then
     jdk_prune.sh "${dest_dir}/${jdk_dir}"
 fi
 
-java --version
+# print out the version
+java -version
