@@ -13,4 +13,6 @@ elif [ -n "$(which yum)" ]; then
 	sudo yum install -y "$@"
 elif [ -n "$(which apk)" ]; then
 	apk add "$@"
+elif [ -n "$(which pacman)" ]; then
+	sudo -Sy --noconfirm "$@"
 fi

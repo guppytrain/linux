@@ -12,5 +12,7 @@ if [ -n "$(which apt)" ]; then
 elif [ -n "$(which yum)" ]; then
 	sudo yum remove -y "$@"
 elif [ -n "$(which apk)" ]; then
-	apk del --purge "$@"
+	sudo apk del --purge "$@"
+elif [ -n "$(which pacman)" ]; then
+	sudo -R --noconfirm "$@"
 fi

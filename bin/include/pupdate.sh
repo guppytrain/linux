@@ -8,4 +8,6 @@ elif [ -n "$(which yum)" ]; then
 	sudo yum clean -q expire-cache
 elif [ -n "$(which apk)" ]; then
 	apk update
+elif [ -n "$(which pacman)" ]; then
+	sudo -Sy
 fi
