@@ -73,6 +73,7 @@ fi
 
 printf "%s\n\n%s\n" "JDK_INSTALL_DIR=$dest_dir" "$(cat $CWH/etc/.jdk)" > "$SHARE_DIR/etc/include/.jdk"
 
+echo "Extracting folder name..."
 jdk_dir="$(tar tzf "$jdk_file_path" | sed -e 's@/.*@@' | uniq)"
 
 # ensure destination
@@ -90,6 +91,7 @@ if [ -d "$dest_dir/$jdk_dir" ]; then
 fi
 
 # extract
+echo "Extracting jdk files..."
 sudo tar -xzf "$jdk_file_path" -C "$dest_dir"
 
 sudo ln -s "$dest_dir/$jdk_dir" "$dest_dir/current"
@@ -106,3 +108,4 @@ if [ "${PRUNE_JDK}" = true ]; then
     jdk_prune.sh "${dest_dir}/${jdk_dir}"
 fi
 
+java --version
