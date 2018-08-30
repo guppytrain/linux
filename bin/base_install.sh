@@ -7,7 +7,7 @@
 pupdate.sh
 
 # certs
-pinst ca-certificates
+pinst.sh ca-certificates
 
 # wget
 pinst.sh wget
