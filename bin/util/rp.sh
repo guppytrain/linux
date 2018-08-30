@@ -68,7 +68,8 @@ while (( "$#" )); do
             # echo "File: $REPLY"
             files+=("$REPLY")
         # done < <(find "$1" -type l,f -not -path "*/\.git/*" -not -name "\.gitignore" -not -name "\.dockerignore" -print0)
-        done < <(find "$1" -type f -not -path "*/\.git/*" -not -name "\.gitignore" -not -name "\.dockerignore" -not -path "*/*\.tar\.*" -print0)
+        # done < <(find "$1" -type f -not -path "*/\.git/*" -not -name "\.gitignore" -not -name "\.dockerignore" -not -path "*/*\.tar\.*" -print0)
+        done < <(find "$1" -type f -not -path "*/\.git/*" -not -name "\.gitignore" -not -name "\.dockerignore" -not -path "*/*\.tar\.*" -not -path "*/*\.gz" -not -path "*/*\.zip" -print0)
 
         for f in "${files[@]}"; do
             echo "Processing File: $f"
