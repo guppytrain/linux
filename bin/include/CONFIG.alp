@@ -1,3 +1,4 @@
 # common config
 export ALPINE_CONFIG_LOADED=true
 
+export PRUNE_JDK=true

@@ -12,5 +12,8 @@ export JDK_BUILD=13
 export JDK_PATH_ID=96a7b8442fe848ef90c96a2fad6ed6d1
 export JDK_VERSION_FULL="${JDK_VERSION}u${JDK_UPDATE}-b${JDK_BUILD}"
 export JDK_FILENAME="jdk-${JDK_VERSION}u${JDK_UPDATE}-linux-x64.tar.gz"
+export JDK_REQ_HEADER="Cookie: oraclelicense=accept-securebackup-cookie;"
 export JDK_URI="http://download.oracle.com/otn-pub/java/jdk/${JDK_VERSION_FULL}/${JDK_PATH_ID}/${JDK_FILENAME}"
+export JCE_FILENAME="jce_policy-${JDK_VERSION}.zip"
+export JCE_URI="http://download.oracle.com/otn-pub/java/jce/${JDK_VERSION}/${JCE_FILENAME}"
 

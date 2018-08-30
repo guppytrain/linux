@@ -6,14 +6,20 @@
 # echo "PATH: $PATH"
 pupdate.sh
 
-# zsh
-zsh_install.sh
+# certs
+pinst ca-certificates
 
 # wget
 pinst.sh wget
 
 # curl
 pinst.sh curl
+
+# tar
+pinst.sh tar
+
+# unzip
+pinst.sh unzip
 
 # python
 pinst.sh python
