@@ -9,7 +9,7 @@ if [ ! -f "$HOME/Downloads/$license_file" ] || [ ! -f "$DOWNLOAD_DIR/$license_fi
 	firefox "$key_uri" & > /dev/null 2>&1
 fi
 
-bash -c "read -s -e -p \"Log in to JetBrains account, if necessary.  Press ENTER to continue...\""
+bash -c "read -s -e -p \"Log in to JetBrains account, if necessary.  Download license file for offline use.  Press ENTER to continue...\""
 
 license_file="YMYRG6F1LL.txt"
 if [ -f "$HOME/Downloads/$license_file" ]; then
