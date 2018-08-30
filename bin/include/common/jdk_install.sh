@@ -4,10 +4,13 @@
 . "$CWH/bin/util/include/sleepfor.sh"
 
 # get options
-while getopts "d" o; do
+while getopts "df" o; do
     case "$o" in
         d)
             download_only=true
+            ;;
+        f)
+            force=true
             ;;
         *)
             echo "No options specified"
@@ -17,7 +20,7 @@ done
 
 shift $(( OPTIND-1 ))
 
-echo "download_only=\"${download_only}\""
+printf "%s, %s \n" "download_only=\"${download_only}\"" "force=\"${force}\""
 
 if [ -z "$DOWNLOAD_DIR" ] || [ ! -d "$DOWNLOAD_DIR" ]; then
 	echo "Download director is not defined, exiting..."
@@ -38,12 +41,12 @@ else
     jdk_file_path="${SHARE_DIR}/docker/$JDK_FILENAME"
 fi
 
-# download file, if not already downloaded
-if [ -f "$jdk_file_path" ]; then
+# download file, if not already downloaded, and not force=true
+if [ -f "$jdk_file_path" ] && [ "$force" != true ]; then
 	echo "Using existing file: $jdk_file_path"
 else
 	echo "About to download file: $JDK_FILENAME"
-	wget --progress=bar:force:noscroll -O "$DOWNLOAD_DIR/$JDK_FILENAME" "$JDK_URI"
+	wget --progress=bar:force:noscroll --header "Cookie: oraclelicense=accept-securebackup-cookie;" -O "$DOWNLOAD_DIR/$JDK_FILENAME" "$JDK_URI"
     jdk_file_path="$DOWNLOAD_DIR/$JDK_FILENAME"
 fi
 

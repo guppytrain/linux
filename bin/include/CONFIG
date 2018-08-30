@@ -3,6 +3,14 @@ export COMMON_CONFIG_LOADED=true
 
 # java
 # export JDK_FILENAME="jdk-8u171-linux-x64.tar.gz"
-export JDK_FILENAME="jdk-8u181-linux-x64.tar.gz"
-export JDK_URI="https://www.dropbox.com/s/6ay7ktjs97vsne3/jdk-8u171-linux-x64.tar.gz?dl=1"
+# export JDK_FILENAME="jdk-8u181-linux-x64.tar.gz"
+# export JDK_URI="https://www.dropbox.com/s/6ay7ktjs97vsne3/jdk-8u171-linux-x64.tar.gz?dl=1"
+
+export JDK_VERSION=8
+export JDK_UPDATE=181
+export JDK_BUILD=13
+export JDK_PATH_ID=96a7b8442fe848ef90c96a2fad6ed6d1
+export JDK_VERSION_FULL="${JDK_VERSION}u${JDK_UPDATE}-b${JDK_BUILD}"
+export JDK_FILENAME="jdk-${JDK_VERSION}u${JDK_UPDATE}-linux-x64.tar.gz"
+export JDK_URI="http://download.oracle.com/otn-pub/java/jdk/${JDK_VERSION_FULL}/${JDK_PATH_ID}/${JDK_FILENAME}"
 
