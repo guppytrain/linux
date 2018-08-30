@@ -1,4 +1,3 @@
 # common config
 export DEBIAN_CONFIG_LOADED=true
 
-export PRUNE_JDK=true
