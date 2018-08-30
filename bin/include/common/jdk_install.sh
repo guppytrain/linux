@@ -35,16 +35,16 @@ fi
 dest_dir="/usr/lib/jvm"
 
 # approach: if in share folder, use it; otherwise, download it, but do not copy it to the share folder after downloading
-if [ -f "$DOWNLOAD_DIR/$JDK_FILENAME" ]; then
-    jdk_file_path="$DOWNLOAD_DIR/$JDK_FILENAME"
-else
+if [ -f "$SHARE_DIR/docker/$JDK_FILENAME" ]; then
     jdk_file_path="${SHARE_DIR}/docker/$JDK_FILENAME"
+else
+    jdk_file_path="$DOWNLOAD_DIR/$JDK_FILENAME"
 fi
 
-if [ -f "$DOWNLOAD_DIR/$JCE_FILENAME" ]; then
-    jce_file_path="$DOWNLOAD_DIR/$JCE_FILENAME"
-else
+if [ -f "$SHARE_DIR/docker/$JCE_FILENAME" ]; then
     jce_file_path="${SHARE_DIR}/docker/$JCE_FILENAME"
+else
+    jce_file_path="$DOWNLOAD_DIR/$JCE_FILENAME"
 fi
 
 # download file, if not already downloaded, and not force=true
@@ -77,7 +77,7 @@ jdk_dir="$(tar tzf "$jdk_file_path" | sed -e 's@/.*@@' | uniq)"
 
 # ensure destination
 if [ ! -d "$dest_dir" ]; then
-	"sudo mkdir "$dest_dir"
+	sudo mkdir "$dest_dir"
 fi
 
 # clean up existing
@@ -99,7 +99,7 @@ echo "Contents of `readlink -f $dest_dir/current`"
 ls "$dest_dir/current"
 
 # unzip the jce
-unzip -jo -d "${dest_dir}/${jdk_dir}/jre/lib/security" "$JCE_FILENAME"
+unzip -jo -d "${dest_dir}/${jdk_dir}/jre/lib/security" "$jce_file_path"
 # rm "${dest_dir}/${jdk_dir}/jre/lib/security/README.txt"
 
 if [ "${PRUNE_JDK}" = true ]; then
