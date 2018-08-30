@@ -4,8 +4,8 @@ JDK_HOME="$1"
 
 echo "Alpine: prune unnecessary folders/files: $JDK_HOME"
 
-rm -rf "$JDK_HOME/"*src.zip && \
-rm -rf "$JDK_HOME/lib/missioncontrol" \
+sudo rm -rf "$JDK_HOME/"*src.zip && \
+sudo rm -rf "$JDK_HOME/lib/missioncontrol" \
        "$JDK_HOME/lib/visualvm" \
        "$JDK_HOME/lib/"*javafx* \
        "$JDK_HOME/jre/lib/plugin.jar" \
@@ -24,7 +24,7 @@ rm -rf "$JDK_HOME/lib/missioncontrol" \
        "$JDK_HOME/jre/lib/amd64/libgstreamer-lite.so" \
        "$JDK_HOME/jre/lib/amd64/"libjavafx*.so \
        "$JDK_HOME/jre/lib/amd64/"libjfx*.so && \
-rm -rf "$JDK_HOME/jre/bin/jjs" \
+sudo rm -rf "$JDK_HOME/jre/bin/jjs" \
        "$JDK_HOME/jre/bin/keytool" \
        "$JDK_HOME/jre/bin/orbd" \
        "$JDK_HOME/jre/bin/pack200" \
@@ -38,6 +38,6 @@ rm -rf "$JDK_HOME/jre/bin/jjs" \
        "$JDK_HOME/jre/lib/jfr.jar" \
        "$JDK_HOME/jre/lib/jfr" \
        "$JDK_HOME/jre/lib/oblique-fonts" && \
-# rm "${JDK_HOME}/jre/lib/security/README.txt" && \
+# sudo rm "${JDK_HOME}/jre/lib/security/README.txt" && \
 echo "JDK pruned for Alpine"
 

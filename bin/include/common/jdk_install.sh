@@ -99,8 +99,8 @@ echo "Contents of `readlink -f $dest_dir/current`"
 ls "$dest_dir/current"
 
 # unzip the jce
-unzip -jo -d "${dest_dir}/${jdk_dir}/jre/lib/security" "$jce_file_path"
-# rm "${dest_dir}/${jdk_dir}/jre/lib/security/README.txt"
+sudo unzip -jo -d "${dest_dir}/${jdk_dir}/jre/lib/security" "$jce_file_path"
+# sudo rm "${dest_dir}/${jdk_dir}/jre/lib/security/README.txt"
 
 if [ "${PRUNE_JDK}" = true ]; then
     jdk_prune.sh "${dest_dir}/${jdk_dir}"
