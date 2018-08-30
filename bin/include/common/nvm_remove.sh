@@ -1,5 +1,7 @@
 #!/bin/sh
 
+node_npm_remove.sh
+
 if [ -f "$SHARE_DIR/etc/.nvmrc" ]; then
 	rm "$SHARE_DIR/etc/.nvmrc"
 fi

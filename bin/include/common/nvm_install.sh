@@ -21,7 +21,7 @@ if [ -d "$NVM_DIR" ]; then
 	
 	\. "$NVM_DIR/nvm.sh"
 
-	nvm install node --latest-npm
+    node_npm_install.sh
 fi
 
 # source nvmrc in startup files
