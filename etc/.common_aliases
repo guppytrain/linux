@@ -153,24 +153,29 @@ alias sdstartlatest="bash -C $HOME/dev/docker/cmds/start_latest.cmd"
 
 # shortcuts to frequent directories
 alias gototmp="cd ~/tmp"
-alias gotoshare="cd ~/share"
-alias gotodev="cd ~/dev"
+alias gotoshare="cd $SHARE_DIR"
+alias gotodev="cd $DEV_DIR"
 
-alias gotodocker="cd ~/dev/docker"
-alias gotoamazon="cd ~/dev/docker/amazon_dev"
-alias gotoalpine="cd ~/dev/docker/alpine_dev"
-alias gotodebian="cd ~/dev/docker/debian_dev"
+alias gotodocker="cd $DEV_DIR/docker"
+alias gotoamazon="cd $DEV_DIR/docker/amazon_dev"
+alias gotoalpine="cd $DEV_DIR/docker/alpine_dev"
+alias gotodebian="cd $DEV_DIR/docker/debian_dev"
 
-alias gotoplanter="cd ~/dev/planter"
+alias gotoplanter="cd $DEV_DIR/planter"
 
-alias gotodocker="cd ~/dev/docker"
-alias gotolinux="cd ~/dev/linux"
-alias gotolinuxetc="cd ~/dev/linux/etc"
-alias gotolinuxbin="cd ~/dev/linux/bin"
-alias gotolinuxutil="cd ~/dev/linux/bin/util"
-alias gotolinuxinstallers="cd ~/dev/linux/bin/installers"
-alias gotolinuxcommon="cd ~/dev/linux/bin/include/common"
-alias gotolinuxdesktop="cd ~/dev/linux/bin/include/desktop"
+alias gotodocker="cd $DEV_DIR/docker"
+alias gotolinux="cd $DEV_DIR/linux"
+alias gotolinuxetc="cd $DEV_DIR/linux/etc"
+alias gotolinuxbin="cd $DEV_DIR/linux/bin"
+alias gotolinuxutil="cd $DEV_DIR/linux/bin/util"
+alias gotolinuxinstallers="cd $DEV_DIR/linux/bin/installers"
+alias gotolinuxcommon="cd $DEV_DIR/linux/bin/include/common"
+alias gotolinuxdesktop="cd $DEV_DIR/linux/bin/include/desktop"
+
+# vim shortcuts
+alias vlinux="cd $DEV_DIR/linux; vim $@"
+alias vdocker="cd $DEV_DIR/docker; vim $@"
+alias vplanter="cd $DEV_DIR/planter; vim $@"
 
 # todo
 alias todo="vim $HOME/share/TODO"

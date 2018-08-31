@@ -33,9 +33,9 @@ if [ ! -d "$CLEAN_DIR" ]; then
 fi
 
 # redundant, but for clarity safe
-# if [ ! -d "$SHARE_DIR" ]; then
-# 	mkdir "$SHARE_DIR"
-# fi
+if [ ! -d "$SHARE_DIR" ]; then
+ 	mkdir "$SHARE_DIR"
+fi
 
 if [ ! -d "$SHARE_DIR/bin" ]; then
 	mkdir "$SHARE_DIR/bin"
@@ -123,6 +123,7 @@ fi
 # copy over etc and bin files
 echo "Copying bin and etc files"
 
+cp -f "$CWH/bin/util/add_ssh_key.sh" "$SHARE_DIR/bin/."
 cp -f "$CWH/bin/util/setjava.sh" "$SHARE_DIR/bin/."
 cp -f "$CWH/bin/util/sd.sh" "$SHARE_DIR/bin/."
 cp -f "$CWH/bin/util/rp.sh" "$SHARE_DIR/bin/."
