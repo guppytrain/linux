@@ -4,7 +4,6 @@ print_usage() {
   printf "Usage: setup.sh [c|n]"
 }
 
-# only for 
 # while getopts 'abc:x:yz' flag; do
 while getopts 'n' flag; do
   case "${flag}" in
