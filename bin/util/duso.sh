@@ -7,7 +7,7 @@ str="${s1}${s2}"
 
 echo "Stripping "${str}""
 
-if [ -z "$(which "${str}")" ]; then
+if [ -z "$(2>/dev/null which "${str}")" ]; then
     echo "Stripping "${str}" from 'linux' repo"
     $DEV_DIR/linux/bin/util/rp.sh -a "${str}" $DEV_DIR/linux
 fi

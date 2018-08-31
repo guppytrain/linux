@@ -2,12 +2,12 @@
 
 # package manager specific update
 
-if [ -n "$(which apt)" ]; then
+if [ -n "$(2>/dev/null which apt)" ]; then
 	sudo apt-get update
-elif [ -n "$(which yum)" ]; then
+elif [ -n "$(2>/dev/null which yum)" ]; then
 	sudo yum clean -q expire-cache
-elif [ -n "$(which apk)" ]; then
+elif [ -n "$(2>/dev/null which apk)" ]; then
 	apk update
-elif [ -n "$(which pacman)" ]; then
+elif [ -n "$(2>/dev/null which pacman)" ]; then
 	sudo -Sy
 fi
