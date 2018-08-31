@@ -1,11 +1,13 @@
 #!/bin/sh
 
+# NOTE: this approach to prevent rp.sh from stripping the search string form this file
 s1="su"
 s2="do"
+str="${s1}${s2}"
 
-echo "Stripping "${s1}${s2}""
+echo "Stripping "${str}""
 
-if [ -z "$(which "${s1}${s2}")" ]; then
-    echo "Stripping 'sudo' from 'linux' repo"
-    $DEV_DIR/linux/bin/util/rp.sh -a "${su}${do}" $DEV_DIR/linux
+if [ -z "$(which "${str}")" ]; then
+    echo "Stripping "${str}" from 'linux' repo"
+    $DEV_DIR/linux/bin/util/rp.sh -a "${str}" $DEV_DIR/linux
 fi
