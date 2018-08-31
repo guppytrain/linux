@@ -1,1 +1,1 @@
-# linux related utilies and functions for dev and docker related stuff.
+# linux related utilities and functions for dev and docker related stuff.
