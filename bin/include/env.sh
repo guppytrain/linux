@@ -35,8 +35,11 @@ elif [ -n "$(which yum)" ]; then
 	echo "Detected yum, assume fedora/centos"
 	DISTRO="cos"
 elif [ -n "$(which apk)" ]; then
-	echo "Detected apk, assume "alpine
+	echo "Detected apk, assume alpine"
 	DISTRO="alp"
+elif [ -n "$(which pacman)" ]; then
+	echo "Detected arch, assume manjara"
+	DISTRO="arch"
 fi
 
 # desktop or not
