@@ -9,5 +9,5 @@ elif [ -n "$(2>/dev/null which yum)" ]; then
 elif [ -n "$(2>/dev/null which apk)" ]; then
 	apk update
 elif [ -n "$(2>/dev/null which pacman)" ]; then
-	sudo -Sy
+	sudo pacman -Sy
 fi

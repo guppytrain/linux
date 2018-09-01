@@ -14,5 +14,5 @@ elif [ -n "$(2>/dev/null which yum)" ]; then
 elif [ -n "$(2>/dev/null which apk)" ]; then
 	sudo apk del --purge "$@"
 elif [ -n "$(2>/dev/null which pacman)" ]; then
-	sudo -R --noconfirm "$@"
+	sudo pacman -R --noconfirm "$@"
 fi

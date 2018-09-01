@@ -14,5 +14,5 @@ elif [ -n "$(2>/dev/null which yum)" ]; then
 elif [ -n "$(2>/dev/null which apk)" ]; then
 	apk add "$@"
 elif [ -n "$(2>/dev/null which pacman)" ]; then
-	sudo -Sy --noconfirm "$@"
+	sudo pacman -Sy --noconfirm "$@"
 fi
