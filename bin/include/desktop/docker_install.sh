@@ -2,6 +2,8 @@
 
 # run the base install
 docker_base_install.sh && (
+    sleep 3
+
     # run hello world
     echo "Running hello-world docker image"
 
@@ -28,4 +30,6 @@ docker_base_install.sh && (
         echo "Reusing existing shared volume: "${SHARE_DIR}/docker""
     fi
 
+    # login
+    sudo docker login
 )
