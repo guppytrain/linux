@@ -1,0 +1,3 @@
+# common config
+export ARCH_CONFIG_LOADED=true
+
