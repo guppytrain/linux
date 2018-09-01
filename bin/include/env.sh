@@ -42,6 +42,8 @@ elif [ -n "$(2>/dev/null which pacman)" ]; then
 	DISTRO="arch"
 fi
 
+echo "Distro detected: $DISTRO"
+
 # desktop or not
 IS_DESKTOP=false
 if [ -n "${DESKTOP_SESSION}" ]; then
