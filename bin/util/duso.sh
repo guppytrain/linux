@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -z "${DEV_DIR}" ];
+if [ -z "${DEV_DIR}" ]; then
     \. ../include/env.sh
 fi
 
