@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if [ -z "${DEV_DIR}" ];
+    \. ../include/env.sh
+fi
+
 # NOTE: this approach to prevent rp.sh from stripping the search string form this file
 s1="su"
 s2="do"
