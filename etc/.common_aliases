@@ -48,6 +48,7 @@ alias mount='mount |column -t'
 # handy short cuts #
 alias h='history'
 alias j='jobs -l'
+alias hrun="bash < <(sed -n 's/^\s\+[[:digit:]]\+\s\+//p' < <(fzf --height=25% --tac < <(tail -n 30 < <(h))))"
 
 alias path='echo -e ${PATH//:/\\n}'
 alias now='date +"%T"'
@@ -150,6 +151,9 @@ alias sdesh="sd.sh 'esh' $1 $2 $3 $4 $5 $6 $7 $8"
 alias sdebash="sd.sh 'ebash' $1 $2 $3 $4 $5 $6 $7 $8"
 alias sdrunlatest="bash -C $HOME/dev/docker/cmds/run_latest.cmd"
 alias sdstartlatest="bash -C $HOME/dev/docker/cmds/start_latest.cmd"
+alias sdprc="sd.sh 'prc' $1 $2 $3 $4 $5 $6 $7 $8"
+alias sdpri="sd.sh 'pri' $1 $2 $3 $4 $5 $6 $7 $8"
+alias sdprall="sd.sh 'prall' $1 $2 $3 $4 $5 $6 $7 $8"
 
 # shortcuts to frequent directories
 alias gototmp="cd ~/tmp"
@@ -177,6 +181,6 @@ alias vlinux="cd $DEV_DIR/linux; vim $@"
 alias vdocker="cd $DEV_DIR/docker; vim $@"
 alias vplanter="cd $DEV_DIR/planter; vim $@"
 
-# todo
+# todo list
 alias todo="vim $HOME/share/TODO"
 alias prtodo="cat $HOME/share/TODO"
