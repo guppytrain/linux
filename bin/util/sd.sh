@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # docker related
-# Usage: $0 {0|c|i|ils|cls|clsall|r|e|ri|ei|rsh|rbash|esh|ebash}
+# Usage: $0 {0|c|i|ils|cls|clsall|r|e|ri|ei|rsh|rbash|esh|ebash|prc|pri|prall}
 
 	case "$1" in
 		0)
@@ -100,8 +100,23 @@
 				echo "Expected argument: \$2:<image name>"
 			fi
 			;;
+        cpr)
+            echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
+            sudo docker container prune -f
+            ;;
+        ipr)
+            echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
+            IDS="$(sudo docker image ls --format "{{.Repository}} {{.ID}} -" | grep '<none>' | awk '{print $2}' | tr '\n' ' ')"
+            [ -n "$IDS" ] && sudo docker image rm -f $IDS
+            ;;
+        prall)
+            echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
+            sudo docker container prune -f
+            IDS="$(sudo docker image ls --format "{{.Repository}} {{.ID}} -" | grep '<none>' | awk '{print $2}' | tr '\n' ' ')"
+            [ -n "$IDS" ] && sudo docker image rm -f $IDS
+            ;;
 		*)
-			echo $"Usage: $0 {c|i|ils|cls|clsall|r|e|ri|ei|rsh|rbash|esh|ebash}"
+			echo $"Usage: $0 {c|i|ils|cls|clsall|r|e|ri|ei|rsh|rbash|esh|ebash|prc|pri|prall}"
 			# exit 1
 	esac
 
