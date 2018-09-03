@@ -52,7 +52,7 @@ if [ -f "$jdk_file_path" ] && [ "$force" != true ]; then
 	echo "Using existing file: $jdk_file_path"
 else
 	echo "About to download file: $JDK_FILENAME"
-	wget --progress=bar:force:noscroll --header "${JDK_REQ_HEADER}" -O "$DOWNLOAD_DIR/$JDK_FILENAME" "$JDK_URI"
+	wget --progress=dot:giga --header "${JDK_REQ_HEADER}" -O "$DOWNLOAD_DIR/$JDK_FILENAME" "$JDK_URI"
     jdk_file_path="$DOWNLOAD_DIR/$JDK_FILENAME"
 fi
 
@@ -61,7 +61,7 @@ if [ -f "$jce_file_path" ] && [ "$force" != true ]; then
 	echo "Using existing file: $jce_file_path"
 else
 	echo "About to download file: $JCE_FILENAME"
-    wget --progress=bar:force:noscroll --header "${JDK_REQ_HEADER}" -O "$DOWNLOAD_DIR/$JCE_FILENAME" "$JCE_URI"
+    wget --progress=dot:binary --header "${JDK_REQ_HEADER}" -O "$DOWNLOAD_DIR/$JCE_FILENAME" "$JCE_URI"
     jce_file_path="$DOWNLOAD_DIR/$JCE_FILENAME"
 fi
 
