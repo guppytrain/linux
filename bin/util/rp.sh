@@ -39,7 +39,7 @@ shift $(( OPTIND-1 ))
     
 echo "# Args supplied: "$#""
 
-[ $(( "$#" )) -eq 0 ] && usage
+[ $(( $# )) -eq 0 ] && usage
 
 # iterate each argument
 while (( "$#" )); do
