@@ -1,6 +1,6 @@
 #!/bin/bash
 
-usage() { echo "USAGE: wait_for_file.sh -t [FILE . . .]"; exit 1; }
+usage() { echo "USAGE: wait_for_file.sh -it [FILE . . .]"; exit 1; }
 
 # iterate each option
 # local OPTIND
@@ -22,7 +22,7 @@ while getopts "i:t:h" o; do
     esac
 done
 
-echo "# Opts supplied: t=$t"
+echo "# Opts supplied: i=$i, t=$t"
 
 shift $(( OPTIND-1 ))
     
