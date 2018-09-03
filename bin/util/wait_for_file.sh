@@ -74,7 +74,7 @@ while (( "$#" )); do
         done
 
         if [ "$found" != 'true' ]; then
-            "${1} timed out."
+            echo "${1} timed out."
         fi
     fi
 
