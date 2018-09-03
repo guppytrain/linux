@@ -29,7 +29,8 @@ shift $(( OPTIND-1 ))
 echo "# Args supplied: $#"
 
 # filename[s] required
-[ $(( "$#" )) -eq 0 ] && usage
+# [ $(( "$#" )) -eq 0 ] && usage
+[ $# -eq 0 ] && usage
 
 default_interval=1
 # default_timeout=300
