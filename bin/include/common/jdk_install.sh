@@ -109,4 +109,4 @@ if [ "${PRUNE_JDK}" = true ]; then
 fi
 
 # print out the version
-java -version
+"$dest_dir/current/bin/java" -version
