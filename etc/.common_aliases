@@ -127,6 +127,8 @@ alias g="git $@"
 alias gst="g status"
 alias gadd="g add $@"
 alias gcm="g commit -m $@"
+alias gd="git diff HEAD^ $@"
+alias gdt="git difftool HEAD^ $@"
 
 # docker related
 alias dbld="../build.sh $@"
