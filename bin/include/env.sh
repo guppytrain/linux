@@ -28,16 +28,16 @@ fi
 . "${CWH}/bin/include/CONFIG"
 
 # package manager specific env detection of distro
-if [ -n "$(2>/dev/null which apt)" ]; then
+if [ -n "$(command -v apt)" ]; then
 	echo "Detected apt, assume debian"
 	DISTRO="dbn"
-elif [ -n "$(2>/dev/null which yum)" ]; then
+elif [ -n "$(command -v yum)" ]; then
 	echo "Detected yum, assume fedora/centos"
 	DISTRO="cos"
-elif [ -n "$(2>/dev/null which apk)" ]; then
+elif [ -n "$(command -v apk)" ]; then
 	echo "Detected apk, assume alpine"
 	DISTRO="alp"
-elif [ -n "$(2>/dev/null which pacman)" ]; then
+elif [ -n "$(command -v pacman)" ]; then
 	echo "Detected arch, assume manjara"
 	DISTRO="arch"
 fi

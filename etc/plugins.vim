@@ -94,7 +94,7 @@ filetype plugin indent on    " required
 " To install from command line: vim +PluginInstall +qall
 
 " for linux distros that complain
-let $FZF_DEFAULT_COMMAND='[ -n $(2>/dev/null which apk) ] && find . -maxdepth 10 -type f || find . -maxdepth 10 -type f,l -printf "%P\n"'
+let $FZF_DEFAULT_COMMAND='[ -n $(command -v apk) ] && find . -maxdepth 10 -type f || find . -maxdepth 10 -type f,l -printf "%P\n"'
 " let $FZF_DEFAULT_COMMAND='find . -maxdepth 10 -type f,l -printf "%P\n"'
 " let $FZF_DEFAULT_COMMAND='find -maxdepth 10 -type f'
 " let $FZF_DEFAULT_COMMAND='ag --depth 10 --hidden --ignore .git -f -g ""'

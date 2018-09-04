@@ -7,12 +7,12 @@ if [ $# = 0 ]; then
 	exit 1
 fi
 
-if [ -n "$(2>/dev/null which apt)" ]; then
+if [ -n "$(command -v apt)" ]; then
 	sudo apt-get purge -y "$@"
-elif [ -n "$(2>/dev/null which yum)" ]; then
+elif [ -n "$(command -v yum)" ]; then
 	sudo yum remove -y "$@"
-elif [ -n "$(2>/dev/null which apk)" ]; then
+elif [ -n "$(command -v apk)" ]; then
 	sudo apk del --purge "$@"
-elif [ -n "$(2>/dev/null which pacman)" ]; then
+elif [ -n "$(command -v pacman)" ]; then
 	sudo pacman -R --noconfirm "$@"
 fi
