@@ -6,11 +6,17 @@ echo "Starting idea activate..."
 if [ ! -f "$HOME/Downloads/$license_file" ] || [ ! -f "$DOWNLOAD_DIR/$license_file" ]; then
     url="https://www.jetbrains.com"
 
-    bash -c "read -s -e -p \"Press ENTER to open JetBrains site to log in to JetBrains account.\n Then download license file ('YMYRG6F1LL.txt') for offline use, into $HOME/Downloads\""
+    printf "%s\n%s\n" "Press ENTER to open JetBrains site to log in to JetBrains account." "Then download license file ('YMYRG6F1LL.txt') for offline use, into $HOME/Downloads."
+    bash -c "read -s -e -p \"[ENTER]\""
+    echo
 
-    [ -n "$(url)" ] && ( [ "$(command -v xdg-open)" ] && xdg-open $url ) || ( [ "$(command -v gnome-open)" ] && gnome-open $url)
+    [ -n "${url}" ] && ( [ "$(command -v xdg-open)" ] && xdg-open "${url}" >/dev/null 2>&1 ) || ( [ "$(command -v gnome-open)" ] && gnome-open "${url}" >/dev/null 2>&1 )
 
-    bash -c "read -s -e -p \"Press ENTER after successfully logging in and downloading license file.\""
+    sleep 5
+
+    printf "%s\n" "Press ENTER after successfully logging in and downloading license file."
+    bash -c "read -s -e -p \"[ENTER]\""
+    echo
 fi
 
 license_file="YMYRG6F1LL.txt"
