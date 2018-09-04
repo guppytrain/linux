@@ -184,7 +184,7 @@ alias vdev="cd $DEV_DIR; vim $@"
 alias vlinux="cd $DEV_DIR/linux; vim $@"
 alias vdocker="cd $DEV_DIR/docker; vim $@"
 alias vplanter="cd $DEV_DIR/planter; vim $@"
-alias vchanged="vim $(git status -s | awk '{print $2}' | tr '\n' ' ')"
+# alias vchanged="vim $(git status -s | awk '{print $2}' | tr '\n' ' ')"
 
 # todo list
 alias todo="vim $HOME/share/TODO"
