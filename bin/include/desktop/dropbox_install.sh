@@ -2,6 +2,15 @@
 
 echo "Starting dropbox install..."
 
+# directions
+url="https://www.dropbox.com"
+
+bash -c "read -s -e -p \"Press ENTER to open Dropbox site to log in to Dropbox account.\""
+
+[ -n "$(url)" ] && ( [ "$(command -v xdg-open)" ] && xdg-open $url ) || ( [ "$(command -v gnome-open)" ] && gnome-open $url)
+
+bash -c "read -s -e -p \"Press ENTER after successfully logging in.\""
+
 # set dbx info
 filename="dropbox-lnx.x86_64-54.4.90.tar.gz"
 dbx_uri="https://www.dropbox.com/download?plat=lnx.x86_64"

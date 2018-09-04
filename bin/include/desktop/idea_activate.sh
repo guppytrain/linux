@@ -2,14 +2,16 @@
 
 echo "Starting idea activate..."
 
-# download application key
+# download license key
 if [ ! -f "$HOME/Downloads/$license_file" ] || [ ! -f "$DOWNLOAD_DIR/$license_file" ]; then
-	key_uri="https://account.jetbrains.com/licenses"
+    url="https://www.jetbrains.com"
 
-	firefox "$key_uri" & > /dev/null 2>&1
+    bash -c "read -s -e -p \"Press ENTER to open JetBrains site to log in to JetBrains account.\n Then download license file ('YMYRG6F1LL.txt') for offline use, into $HOME/Downloads\""
+
+    [ -n "$(url)" ] && ( [ "$(command -v xdg-open)" ] && xdg-open $url ) || ( [ "$(command -v gnome-open)" ] && gnome-open $url)
+
+    bash -c "read -s -e -p \"Press ENTER after successfully logging in and downloading license file.\""
 fi
-
-bash -c "read -s -e -p \"Log in to JetBrains account, if necessary.  Download license file for offline use.  Press ENTER to continue...\""
 
 license_file="YMYRG6F1LL.txt"
 if [ -f "$HOME/Downloads/$license_file" ]; then
