@@ -1,36 +1,5 @@
 #!/bin/bash
 
-usage() { echo "USAGE: git_fzf_commit.sh -mf [FILE|DIRECTORY . . .]"; exit 1; }
-
-# iterate each option
-# local OPTIND
-
-m=''
-f=''
-
-while getopts "m:f:h" o; do
-    case "$o" in
-        m)
-            m="${OPTARG}"
-            ;;
-        f)
-            f="${OPTARG}"
-            ;;
-        h)
-            usage
-            ;;
-        *)
-            usage
-            ;;
-    esac
-done
-
-echo "# Opts supplied: m=$m, f=$f"
-
-shift $(( OPTIND-1 ))
-    
-echo "# Args supplied: $#"
-
 # print out git status
 git status -s && 
 (
@@ -40,7 +9,7 @@ git status -s &&
     # check comments
     [ -z "${files}" ] && 
         echo "No files selected. Aborting..." &&
-            sleep 5 &&
+            sleep 1 &&
                 exit 1
 
     # select comments to use with fuzzy search
@@ -49,7 +18,7 @@ git status -s &&
     # check comments
     [ -z "${comments}" ] && 
         echo "No comments selected. Aborting..." &&
-            sleep 5 &&
+            sleep 1 &&
                 exit 1
 
     # commit
