@@ -2,7 +2,9 @@
 
 echo "Starting idea activate..."
 
-# download license key
+# download license key for IntelliJ
+license_file="YMYRG6F1LL.txt"
+
 if [ ! -f "$HOME/Downloads/$license_file" ] || [ ! -f "$DOWNLOAD_DIR/$license_file" ]; then
     url="https://www.jetbrains.com"
 
@@ -19,7 +21,6 @@ if [ ! -f "$HOME/Downloads/$license_file" ] || [ ! -f "$DOWNLOAD_DIR/$license_fi
     echo
 fi
 
-license_file="YMYRG6F1LL.txt"
 if [ -f "$HOME/Downloads/$license_file" ]; then
 	mv -f "$HOME/Downloads/$license_file" "$DOWNLOAD_DIR/." 
 fi
