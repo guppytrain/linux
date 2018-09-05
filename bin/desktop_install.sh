@@ -6,7 +6,7 @@
 echo "Starting Desktop Install..." 
 
 # start install
-cd $CWH/installers \
+cd $CWH/bin/installers \
 && ./vim_plugins_install.sh \
 && ./dropbox_install.sh \
 && ./docker_install.sh \

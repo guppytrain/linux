@@ -3,7 +3,7 @@
 . ./include/env.sh
 
 # base setup
-./setup
+./setup.sh -n
 
 # base install
 ./base_install.sh
