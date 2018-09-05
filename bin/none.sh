@@ -2,11 +2,12 @@
 
 . ./include/env.sh
 
-# base clean
-./clean.sh
+# desktop specific
+./desktop_uninstall.sh
 
 # base uninstall
 ./base_uninstall.sh
 
-# desktop specific
-./desktop_uninstall.sh
+# base clean
+./clean.sh
+
