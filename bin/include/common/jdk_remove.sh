@@ -2,6 +2,9 @@
 
 # NOTE: does not delete the jar file
 
+# remove .jdk file
+rm "$SHARE_DIR/etc/include/.jdk"
+
 # jdk full path
 if [ -f "$DOWNLOAD_DIR/$JDK_FILENAME" ]; then
     jdk_file_path="$DOWNLOAD_DIR/$JDK_FILENAME"
@@ -10,7 +13,7 @@ else
 fi
 
 
-# download file, use it to figure out folder name for deletion
+# use downloaded file to figure out folder name for deletion
 if [ -f "$jdk_file_path" ]; then
     echo "Extracting to find jdk folder name"
 	jdk_dir="$(tar tzf "$jdk_file_path" | sed -e 's@/.*@@' | uniq)"

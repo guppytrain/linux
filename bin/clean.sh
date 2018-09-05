@@ -28,6 +28,9 @@ if [ -d "$SHARE_DIR/bin" ]; then
 	rm -rf "$SHARE_DIR/bin/include"
 	rm "$SHARE_DIR/bin/sd.sh"
 	rm "$SHARE_DIR/bin/setjava.sh"
+    rm "$SHARE_DIR/bin/add_ssh_key.sh"
+    rm "$SHARE_DIR/bin/git_fzf_add.sh"
+    rm "$SHARE_DIR/bin/git_fzf_commit.sh"
 fi
 
 if [ -d "$SHARE_DIR/etc" ]; then
