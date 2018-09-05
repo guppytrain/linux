@@ -126,6 +126,8 @@ echo "Copying bin and etc files"
 cp -f "$CWH/bin/util/add_ssh_key.sh" "$SHARE_DIR/bin/."
 cp -f "$CWH/bin/util/setjava.sh" "$SHARE_DIR/bin/."
 cp -f "$CWH/bin/util/sd.sh" "$SHARE_DIR/bin/."
+cp -f "$CWH/bin/util/git_fzf_add.sh" "$SHARE_DIR/bin/."
+cp -f "$CWH/bin/util/git_fzf_commit.sh" "$SHARE_DIR/bin/."
 
 cp -rf "$CWH/bin/util/include/." "$SHARE_DIR/bin/include/."
 cp -rf "$CWH/etc/include/." "$SHARE_DIR/etc/include/." 
