@@ -40,10 +40,11 @@ if [ ! -f "$HOME/Downloads/$license_file" ] || [ ! -f "$DOWNLOAD_DIR/$license_fi
 fi
 
 # start install
-cd $CWH/bin/installers \
-&& ./vim_plugins_install.sh \
-&& ./dropbox_install.sh \
-&& ./docker_install.sh \
-&& ./idea_install.sh \
-&& ./idea_activate.sh \
-&& echo "Finished Desktop Install"
+cd $CWH/bin/installers
+./vim_plugins_install.sh
+./dropbox_install.sh 
+./docker_install.sh 
+./idea_install.sh -t 
+./idea_activate.sh 
+
+echo "Finished Desktop Install"
