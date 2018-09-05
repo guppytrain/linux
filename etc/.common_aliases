@@ -127,6 +127,7 @@ alias g="git $@"
 alias gst="g status"
 alias gadd="g add $@"
 alias gcm="g commit -m $@"
+alias gfc="git_fzf_commit.sh $@"
 alias gd="git diff HEAD^ $@"
 alias gdt="git difftool HEAD^ $@"
 
