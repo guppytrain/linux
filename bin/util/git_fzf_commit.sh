@@ -35,7 +35,7 @@ echo "# Args supplied: $#"
 git status -s && 
 (
     # select files to commit with fuzzy search
-    files="$(git status -s | fzf -m --height=35% --layout=reverse --prompt='File(s): ' | awk '{print $2}')"
+    files="$(git status -s | fzf -m --height=35% --layout=reverse --prompt='File(s): ' | awk '{print $2}' | tr '\n' ' ' | sed -n 's/[[:space:]]\+$//p')"
 
     # check comments
     [ -z "${files}" ] && 
@@ -44,7 +44,7 @@ git status -s &&
                 exit 1
 
     # select comments to use with fuzzy search
-    comments="$(cat $DEV_DIR/TODO | fzf -m --height=35% --layout=reverse --prompt='Comment(s): ')"
+    comments="$(cat $DEV_DIR/TODO | fzf -m --height=35% --layout=reverse --prompt='Comment(s): ' | tr '\n' ';' | sed -n 's/;/; /gp')"
 
     # check comments
     [ -z "${comments}" ] && 
@@ -55,10 +55,10 @@ git status -s &&
     # commit
     printf "%s\nFiles:\n%s\nComments:\n%s\n" "Commiting files and comments" "${files}" "${comments}"
 
-    git commit -m "${comments}" "${files}"
+    git commit -m "${comments}" ${files}
 
-    sleep 3
+    sleep 1 
 
     # verify latest commit
-    git log -1
+    git log -2
 )
