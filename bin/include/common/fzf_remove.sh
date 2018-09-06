@@ -1,5 +1,20 @@
-#!/bin/sh
+#!/bin/bash
 
-$HOME/.fzf/uninstall
+[ -f "$HOME/.fzf/uninstall" ] && $HOME/.fzf/uninstall
 
-rm -rf $HOME/.fzf
+[ -d "$HOME/.fzf" ] && rm -rf $HOME/.fzf
+
+# insert fzf default command
+files=("$HOME/.bashrc" "$HOME/.zshrc"); 
+
+for file in ${files[@]}; do
+    match="$([ -f "${file}" ] && cat "${file}" | egrep -o "FZF_DEFAULT_COMMAND=")"
+
+    if [ -n "$match" ] && [ -f "$file" ]; then 
+        echo "Removing fzf default command from $file"
+
+        cat "$file" | sed -n "/export FZF_DEFAULT_COMMAND\=/d; w "${file}""
+    else
+        echo "Nothing to remove in "$file""
+    fi
+done

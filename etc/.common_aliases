@@ -119,6 +119,10 @@ alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 ## copy to clipboard
 alias clip="xclip -selection clipboard $1"
 
+# fzf related
+alias fz="fzf -m --height=50% $@"
+alias fcd="cd \$(find . -maxdepth 1 -type d -not -path \"*/\.*\" | fz)"
+
 # java related
 alias jv="java -version"
 

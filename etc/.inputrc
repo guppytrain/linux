@@ -11,13 +11,13 @@ TAB: menu-complete
 # set show-all-if-unmodified on
 
 ## # Display a list of the matching files
-# set show-all-if-ambiguous on
+set show-all-if-ambiguous on
 
 ## # Perform partial completion on the first Tab press,
 ## # only start cycling full results on the second Tab press
 
-set menu-complete-display-prefix on
+# set menu-complete-display-prefix on
 
 #set completion-display-width 2 
 set completion-ignore-case on
-#set match-hidden-files off
+set match-hidden-files off
