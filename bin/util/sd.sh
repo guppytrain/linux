@@ -68,7 +68,7 @@
 			echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
 
 			if [ ! -z $2 ]; then
-				sudo docker run -it $2 sh $3 $4 $5 $6 $7 $8
+				sudo docker run -it $2 $3 $4 $5 $6 $7 $8 sh
 			else
 				echo "Expected argument: \$2:<image name>"
 			fi
@@ -77,7 +77,7 @@
 			echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
 
 			if [ ! -z $2 ]; then
-				sudo docker run -it $2 bash $3 $4 $5 $6 $7 $8
+				sudo docker run -it $2 $3 $4 $5 $6 $7 $8 bash
 			else
 				echo "Expected argument: \$2:<image name>"
 			fi
@@ -86,7 +86,7 @@
 			echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
 
 			if [ ! -z $2 ]; then
-				sudo docker exec -it $2 sh $3 $4 $5 $6 $7 $8
+				sudo docker exec -it $2 $3 $4 $5 $6 $7 $8 sh
 			else
 				echo "Expected argument: \$2:<image name>"
 			fi
@@ -95,7 +95,7 @@
 			echo $"sd(sudo docker) $1 $2 $3 $4 $5 $6 $7 $8"
 
 			if [ ! -z $2 ]; then
-				sudo docker exec -it $2 bash $3 $4 $5 $6 $7 $8
+				sudo docker exec -it $2 $3 $4 $5 $6 $7 $8 bash
 			else
 				echo "Expected argument: \$2:<image name>"
 			fi

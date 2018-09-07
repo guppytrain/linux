@@ -37,7 +37,7 @@ fi
 
 shift $(( OPTIND-1 ))
     
-echo "# Args supplied: "$#""
+echo "# Args supplied: $#"
 
 # [ $(( $# )) -eq 0 ] && usage
 [ $# -eq 0 ] && usage

@@ -121,6 +121,7 @@ alias clip="xclip -selection clipboard $1"
 
 # fzf related
 alias fz="fzf -m --height=50% $@"
+alias fzt="fzf -m --height=50% --tac $@"
 alias fcd="cd \$(find . -maxdepth 1 -type d -not -path \"*/\.*\" | fz)"
 
 # java related
@@ -160,10 +161,10 @@ alias sdebash="sd.sh 'ebash' $1 $2 $3 $4 $5 $6 $7 $8"
 alias sdcpr="sd.sh 'cpr' $1 $2 $3 $4 $5 $6 $7 $8"
 alias sdipr="sd.sh 'ipr' $1 $2 $3 $4 $5 $6 $7 $8"
 alias sdprall="sd.sh 'prall' $1 $2 $3 $4 $5 $6 $7 $8"
-alias sdrunlatest="bash -C $HOME/dev/docker/cmds/run_latest.cmd"
-alias sdstartlatest="bash -C $HOME/dev/docker/cmds/start_latest.cmd"
-alias sdcurrun="[ -f "./cmds/run_latest.cmd" ] && bash -C ./cmds/run_latest.cmd || echo 'Currently NOT in a Docker folder, with a Dockerfile' "
-alias sdcurstart="[ -f "./cmds/start_latest.cmd" ] && bash -C ./cmds/start_latest.cmd || echo 'Currently NOT in a Docker folder, with a Dockerfile' "
+alias sdrunlatest="bash -C $HOME/dev/docker/cmds/run_latest.cmd $@"
+alias sdstartlatest="bash -C $HOME/dev/docker/cmds/start_latest.cmd $@"
+alias sdcurrun="[ -f "./cmds/run_latest.cmd" ] && bash -C ./cmds/run_latest.cmd $@ || echo 'Currently NOT in a Docker folder, with a Dockerfile' "
+alias sdcurstart="[ -f "./cmds/start_latest.cmd" ] && bash -C ./cmds/start_latest.cmd $@ || echo 'Currently NOT in a Docker folder, with a Dockerfile' "
 
 # shortcuts to frequent directories
 alias gototmp="cd ~/tmp"
