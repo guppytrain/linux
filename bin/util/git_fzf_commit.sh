@@ -13,7 +13,7 @@ git status &&
                 exit 1
 
     # select comments to use with fuzzy search
-    comments="$(cat $DEV_DIR/TODO | fzf -m --height=35% --layout=reverse --prompt='Comment(s): ' | tr '\n' ';' | sed -n 's/;/; /gp')"
+    comments="$(cat $DEV_DIR/TODO | fzf -m --height=35% --layout=reverse --prompt='Comment(s): ' | tr '\n' ';' | sed -n 's/;/; /g; $s/;\s\+$//p')"
 
     # check comments
     [ -z "${comments}" ] && 

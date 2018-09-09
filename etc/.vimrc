@@ -118,3 +118,5 @@ set wildignore+=.pyc,.swp
 so $HOME/.vim/plugins.vim
 so $HOME/.vim/keymaps.vim
 
+au Filetype * set formatoptions-=cro
+
