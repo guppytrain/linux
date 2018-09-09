@@ -12,7 +12,7 @@ get_docker_image_id ()
 {
     # select ids with fuzzy search
     sudo pwd >/dev/null 2>&1 && 
-    local id="$(sudo docker image ls | fzf -m --height=50% --tac | awk '{print $3}' | tr '\n' ' ' | sed -n 's/[[:space:]]\+$//p')" &&
+    local id="$(sudo docker image ls $@ | fzf -m --height=50% --tac | awk '{print $3}' | tr '\n' ' ' | sed -n 's/[[:space:]]\+$//p')" &&
     echo "$id"
 }
 
@@ -20,7 +20,7 @@ get_docker_image_name ()
 {
     # select ids with fuzzy search
     sudo pwd >/dev/null 2>&1 && 
-    local name="$(sudo docker image ls | fzf -m --height=50% --tac | awk '{print $1":"$2}' | tr '\n' ' ' | sed -n 's/[[:space:]]\+$//p')" &&
+    local name="$(sudo docker image ls $@ | fzf -m --height=50% --tac | awk '{print $1":"$2}' | tr '\n' ' ' | sed -n 's/[[:space:]]\+$//p')" &&
     echo "$name"
 }
 
@@ -41,7 +41,17 @@ rm_docker_image ()
     # validate
     [ -z "${name}" ] && 
         echo "Nothing selected. Aborting..." ||
-    sudo docker rm -f $name
+    sudo docker image rm -f $name
+}
+
+rm_docker_image_all ()
+{
+    local id="$(get_docker_image_id -a)"
+
+    # validate
+    [ -z "${id}" ] && 
+        echo "Nothing selected. Aborting..." ||
+    sudo docker image rm -f $id
 }
 
 start_docker_container ()

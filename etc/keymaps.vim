@@ -9,12 +9,12 @@ map <C-o> :NERDTreeToggle<CR>
 map 3 :set nonumber!<CR>
 
 " save, then to shell
-map wsh :w<bar>sh<CR>
+command Wsh :w<bar>:sh
 
 " close other buffers
 " map bo :NERDTreeToggle <bar> :%bd <bar> :e# <bar> :bd#<CR>
 " map BO :%bd<bar>e#<bar>bd#<CR>
-map BO :%bd<bar>e#<bar>bd#
+command Bo :%bd<bar>e#<bar>bd#
 
 " abbreviations
 iabbr cb; # [?]
