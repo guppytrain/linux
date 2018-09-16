@@ -166,8 +166,15 @@ alias sdstartlatest="bash -C $HOME/dev/docker/cmds/start_latest.cmd $@"
 alias sdcurrun="[ -f "./cmds/run_latest.cmd" ] && bash -C ./cmds/run_latest.cmd $@ || echo 'Currently NOT in a Docker folder, with a Dockerfile' "
 alias sdcurstart="[ -f "./cmds/start_latest.cmd" ] && bash -C ./cmds/start_latest.cmd $@ || echo 'Currently NOT in a Docker folder, with a Dockerfile' "
 
-alias dm="docker-machine $@"
-alias dmsh="eval \"PS1='[\u@\h \W\$(__docker_machine_ps1)]\$ '\""
+# docker machine
+alias dkm="docker-machine $@"
+alias dkmh="docker-machine help $@"
+alias dkmls="docker-machine 'ls'"
+alias dkmsh="eval \"PS1='[\u@\h \W\$(__docker_machine_ps1)]\$ '\""
+
+# docker compose
+alias dkc="docker-compose $@"
+alias dkch="docker-compose help $@"
 
 # shortcuts to frequent directories
 alias gototmp="cd ~/tmp"
