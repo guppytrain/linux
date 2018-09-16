@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# handle git fzf helper script
+rm "$SHARE_DIR/bin/git_fzf_add.sh"
+rm "$SHARE_DIR/bin/git_fzf_commit.sh"
+
 [ -f "$HOME/.fzf/uninstall" ] && $HOME/.fzf/uninstall
 
 [ -d "$HOME/.fzf" ] && rm -rf $HOME/.fzf

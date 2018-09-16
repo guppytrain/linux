@@ -71,6 +71,9 @@ if [ -n "${download_only}" ]; then
     exit 0
 fi
 
+# copy the jdk version setter
+cp -f "$CWH/bin/util/setjava.sh" "$SHARE_DIR/bin/."
+
 printf "%s\n\n%s\n" "JDK_INSTALL_DIR=$dest_dir" "$(cat $CWH/etc/.jdk)" > "$SHARE_DIR/etc/include/.jdk"
 
 echo "Extracting folder name..."

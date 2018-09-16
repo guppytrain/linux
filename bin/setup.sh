@@ -124,13 +124,17 @@ fi
 echo "Copying bin and etc files"
 
 cp -f "$CWH/bin/util/add_ssh_key.sh" "$SHARE_DIR/bin/."
-cp -f "$CWH/bin/util/setjava.sh" "$SHARE_DIR/bin/."
-cp -f "$CWH/bin/util/sd.sh" "$SHARE_DIR/bin/."
-cp -f "$CWH/bin/util/git_fzf_add.sh" "$SHARE_DIR/bin/."
-cp -f "$CWH/bin/util/git_fzf_commit.sh" "$SHARE_DIR/bin/."
+
+# TODO: refactor this to the individual installers
+# cp -f "$CWH/bin/util/setjava.sh" "$SHARE_DIR/bin/."
+# cp -f "$CWH/bin/util/sd.sh" "$SHARE_DIR/bin/."
+# cp -f "$CWH/bin/util/git_fzf_add.sh" "$SHARE_DIR/bin/."
+# cp -f "$CWH/bin/util/git_fzf_commit.sh" "$SHARE_DIR/bin/."
 
 cp -rf "$CWH/bin/util/include/." "$SHARE_DIR/bin/include/."
 cp -rf "$CWH/etc/include/." "$SHARE_DIR/etc/include/." 
 
+# TODO: too many aliases here that are app specific; really need to break this up into separate files and include dynamically
 cp -f "$CWH/etc/.common_aliases" "$SHARE_DIR/etc/."
 cp -f "$CWH/etc/.common_env" "$SHARE_DIR/etc/."
+

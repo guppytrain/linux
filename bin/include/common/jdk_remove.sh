@@ -2,6 +2,9 @@
 
 # NOTE: does not delete the jar file
 
+# remove the java version setter
+rm "$SHARE_DIR/bin/setjava.sh"
+
 # remove .jdk file
 rm "$SHARE_DIR/etc/include/.jdk"
 

@@ -2,6 +2,9 @@
 
 # run the base install
 docker_base_install.sh && (
+    # copy docker helper script
+    cp -f "$CWH/bin/util/sd.sh" "$SHARE_DIR/bin/."
+
     sleep 3
 
     # run hello world
