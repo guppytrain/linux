@@ -31,4 +31,5 @@ docker_base_remove.sh && (
 
     # NOTE: any edited configuration files must be deleted manually
     echo "NOTE: any edited configuration files must be deleted manually"
-)
+) && 
+docker_machine_remove.sh

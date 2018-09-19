@@ -35,4 +35,6 @@ docker_base_install.sh && (
 
     # login
     sudo docker login
-)
+) && 
+docker_machine_install.sh
+
