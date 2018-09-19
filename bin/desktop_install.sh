@@ -45,7 +45,7 @@ cd $CWH/bin/installers
 ./dropbox_install.sh 
 ./docker_install.sh 
 ./virtualbox_install.sh 
-./idea_install.sh -t 
+./idea_install.sh -t &&  
 ./idea_activate.sh 
 
 echo "Finished Desktop Install"

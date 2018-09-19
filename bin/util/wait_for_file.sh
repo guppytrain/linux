@@ -48,12 +48,18 @@ while (( "$#" )); do
     state=''
     found=''
    
-    if [ -f "$1" ]; then
-        echo "Wait: $1"
-            
-        while [ $(( count )) -lt $(( timeout )) ] && [ $(( count )) -lt $(( max_timeout )) ]; do
-            (( count+=interval ))
+    echo "Wait: $1"
+        
+    while [ $(( count )) -lt $(( timeout )) ] && [ $(( count )) -lt $(( max_timeout )) ]; do
+        (( count+=interval ))
 
+        if [ ! -e "$1" ]; then
+            echo "$1 does not exist.  Waiting..."
+        elif [ -d "$1" ]; then
+            echo "$1 is an existing directory.  Done."
+            found='true'
+            break
+        elif [ -f "$1" ]; then
             state="$(stat -c "%s.%Y" "$1")"
 
             # echo "Previous state of "$1": $prev_state"
@@ -70,12 +76,13 @@ while (( "$#" )); do
 
             prev_state="${state}"
 
-            sleep $interval 
-        done
-
-        if [ "$found" != 'true' ]; then
-            echo "${1} timed out."
         fi
+
+        sleep $interval 
+    done
+
+    if [ "$found" != 'true' ]; then
+        echo "${1} timed out."
     fi
 
     shift 1

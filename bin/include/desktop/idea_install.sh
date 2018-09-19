@@ -4,7 +4,8 @@ echo "Starting idea install..."
 
 # set idea info
 filename="ideaIU-2018.1.5.tar.gz"
-IDEA_DIR="$HOME/Dropbox/idea"
+DROPBOX_DIR="$HOME/Dropbox"
+IDEA_DIR="$DROPBOX_DIR/idea"
 dest_dir="/opt"
 # dest_dir="$HOME/tmp"
 
@@ -27,8 +28,8 @@ echo "# Opts supplied: t=$til_ready"
 shift $(( OPTIND-1 ))
 
 [ -n "${til_ready}" ] &&  
-    echo "Waiting for ${filename} to be 'ready'" && 
-    wait_for_file.sh "${IDEA_DIR}/${filename}"
+    echo "Waiting for dropbox folder and ${filename} to be 'ready'" && 
+    wait_for_file.sh "${DROPBOX_DIR}" "${IDEA_DIR}/${filename}"
 
 # install idea, if found otherwise quit
 if [ -f "$IDEA_DIR/$filename" ]; then
