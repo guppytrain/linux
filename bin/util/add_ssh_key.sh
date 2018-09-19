@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if [ -z "$1" ]; then
+	echo "Email address needed but not passed"
+	exit 1
+fi
+
 # NOTE: assumes default rsa key names
 id_file="$HOME/.ssh/id_rsa"
 
@@ -7,7 +12,8 @@ id_file="$HOME/.ssh/id_rsa"
 if [ ! -d "$HOME/.ssh" ]; then
     echo "Creating new .ssh folder"
 
-    mkdir -p "$HOME/.ssh"
+    # not needed since, ssh-keygen auto creates it
+    # mkdir -p "$HOME/.ssh"
 
     [ -z "$1" ] && ssh-keygen -t rsa -b 4096 -C "$1" \
         || ssh-keygen -t rsa -b 4096
@@ -44,4 +50,4 @@ else
     echo "Key: $fp already exists in ssh key list"
 fi
 
-ssh -T git@github.com
+# ssh -T git@github.com
