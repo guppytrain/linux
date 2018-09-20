@@ -12,21 +12,28 @@ sudo apt-get    install -y \
 mint=="$(lsb_release -a | grep -io "linuxmint")"
 
 if [ -n "${mint}" ]; then
+    keyid="58118E89F3A912897C070ADBF76221572C52609D"
+    pkey="$(apt-key export ${keyid} 2>/dev/null)"
+
     # First import the GPG key
-    sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 \
-        --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+    [ -z "${pkey}" ] && sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 \
+        --recv-keys ${keyid}
+    
+    repo="deb https://apt.dockerproject.org/repo ubuntu-xenial main"
+    repoed="$(cat /etc/apt/sources.list /etc/apt/sources.list.d/*.list | grep -o "${repo}")"
     
     # Next, point the package manager to the official Docker repository
-    sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
-    
-    # Update the package database
-    sudo apt update
+    [ -z "${repoed}" ] && sudo apt-add-repository "${repo}"
 
     inst1="$(sudo apt version linux-image-generic)"
     inst2="$(sudo apt version linux-image-extra-virtual)"
 
+    # Update the package database
+    sudo apt update
+
     if [ -n "$inst1" ] && [ -n "$inst2" ]; then
         # Install Docker
+        echo "Installing docker-engine"
         sudo apt install docker-engine
     else
         # Installing both packages will eliminate an unmet dependencies error when you try to install the
