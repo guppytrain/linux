@@ -71,7 +71,8 @@ set noerrorbells
 "Flash the screen instead of beeping on errors.
 set visualbell
 "Enable mouse for scrolling and resizing.
-set mouse=a
+"NOTE: disabled because this breaks highlight and CTRL+SHIFT+C copying
+" set mouse=a
 "Set the window’s title, reflecting the file currently being edited.
 set title
 "Use colors that suit a dark background.

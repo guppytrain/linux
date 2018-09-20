@@ -207,4 +207,4 @@ alias vplanter="cd $DEV_DIR/planter; vim $@"
 
 # todo list
 alias todo="vim $HOME/dev/TODO"
-alias prtodo="tac $HOME/dev/TODO"
+alias prtodo="cat $HOME/dev/TODO"
