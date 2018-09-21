@@ -146,3 +146,34 @@ refactoring of helper script from setup.sh to the individual installers
 # [x] between 9/4/2018 and 9/15/2018
 add call to docker-machine-install.sh to docker-install.sh
 
+# [x] Wed 19 Sep 2018 04:27:52 PM PDT 
+fix desktop install issue where idea activate was failing because dropbox folder was not being created and idea was not waiting for it to be available
+
+# [x] Wed 19 Sep 2018 07:13:58 PM PDT
+disable mouse selection and scrolling in vim because it breaks select and copy
+
+# [x] Wed 19 Sep 2018 07:19:55 PM PDT
+no longer show todo items in reverse since changing to entering newest item last in TODO file
+
+# [x] Wed 19 Sep 2018 10:53:06 PM PDT
+do fetch gpg key or add repo, if already there
+
+# [x] Fri 21 Sep 2018 11:51:37 AM PDT  
+fix issue in mint vim, where git folders are shown in fzf search
+
+# [x] Fri 21 Sep 2018 11:51:40 AM PDT 
+add alias to update all repos
+
+# [x] Fri 21 Sep 2018 09:28:43 AM PDT 
+update plant.sh to update its own repo
+
+# [x] Fri 21 Sep 2018 09:29:14 AM PDT 
+add abbrevs for completed checkbox
+
+# [x] Fri 21 Sep 2018 09:43:00 AM PDT 
+change gototmp to go to /tmp instead of ~/tmp
+
+# [x] Fri 21 Sep 2018 11:51:44 AM PDT 
+add TODO list to linux repo
+
+
