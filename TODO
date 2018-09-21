@@ -1,0 +1,148 @@
+# [x] Mon 27 Aug 2018 05:03:25 PM PDT 
+remove image being updated
+
+# [x] Mon 27 Aug 2018 05:03:21 PM PDT  
+remove containers of image being updated
+docker container ls -a -q --filter=name="$FULL_IMAGE_NAME"
+
+# [x] Mon 27 Aug 2018 10:30:45 PM PDT  
+fix fzf in docker images
+
+# [x] Mon 03 Sep 2018 11:23:09 PM PDT 
+make base_install.sh work for alpine
+
+# [x] Mon 03 Sep 2018 11:23:07 PM PDT 
+install node in alpine
+
+# [x] Mon 03 Sep 2018 11:23:05 PM PDT 
+install jdk in alpine
+
+# [x] Mon 03 Sep 2018 11:22:56 PM PDT  
+update all which calls to command -v
+
+# [x] Tue 04 Sep 2018 11:08:50 AM PDT 
+add new aliases to run and start current docker container
+
+# [x] Tue 04 Sep 2018 11:08:48 AM PDT 
+fix comment in main_install.sh
+
+# [x] Tue 04 Sep 2018 12:33:32 PM PDT 
+added alias for selection of files and checkin comments for git
+
+# [x] between 9/4/2018 and 9/15/2018 
+added script to perfor the actual selection of files and checkin comments for git
+
+# [x] between 9/4/2018 and 9/15/2018 
+update README
+
+# [x] between 9/4/2018 and 9/15/2018  
+remove options processing from fzf git commit script - not used for now
+
+# [x] between 9/4/2018 and 9/15/2018 
+add git util script to add files with fzf selection(s)
+
+# [x] between 9/4/2018 and 9/15/2018 
+use long git status instead of short
+
+# [x] between 9/4/2018 and 9/15/2018
+add desktop and all installs/uninstalls 
+
+# [x] between 9/4/2018 and 9/15/2018
+call setup.sh correctly; use correct path to 'installers'
+
+# [x] between 9/4/2018 and 9/15/2018
+add download instructions and url logins
+
+# [x] between 9/4/2018 and 9/15/2018
+make none.sh not be chained, and reverse the order of apps compared to all.sh
+
+# [x] between 9/4/2018 and 9/15/2018
+uninstall fzf, and remove fzf files/folder
+
+# [x] between 9/4/2018 and 9/15/2018
+remove util scripts
+
+# [x] between 9/4/2018 and 9/15/2018
+remove .jdk
+
+# [x] between 9/4/2018 and 9/15/2018
+updated fzf install/remove to handle definition and removal of FZF_DEFAULT_COMMAND
+
+# [x] between 9/4/2018 and 9/15/2018
+updated fzf default command to ignore unneeded directories
+
+# [x] between 9/4/2018 and 9/15/2018
+enabled printing of bash completion options
+
+# [x] between 9/4/2018 and 9/15/2018
+added alias to cd into fzf selected folder
+
+# [x] between 9/4/2018 and 9/15/2018
+add fzf alias to show results in smaller panel
+
+# [x] between 9/4/2018 and 9/15/2018
+added get-started project
+
+# [x] between 9/4/2018 and 9/15/2018
+add template folder
+
+# [x] between 9/4/2018 and 9/15/2018
+update cmd template to allow passing of args
+
+# [x] between 9/4/2018 and 9/15/2018
+update build.sh to use image specific main_install.sh, if supplied
+
+# [x] between 9/4/2018 and 9/15/2018
+add docker_util.sh to help with rm, run and start of images and containers
+
+# [x] between 9/4/2018 and 9/15/2018
+update sd related aliases to allow passing of params
+
+# [x] between 9/4/2018 and 9/15/2018
+extend docker_util.sh with more functions
+
+# [x] between 9/4/2018 and 9/15/2018
+if project defineds its own main_install.sh, use it instead of the common one
+
+# [x] between 9/4/2018 and 9/15/2018
+redefine some vim shortcuts and commands
+
+# [x] between 9/4/2018 and 9/15/2018
+enable removal of intermediate containers and images during build
+
+# [x] between 9/4/2018 and 9/15/2018
+remove trailing ';' from git comments checkin script
+
+# [x] between 9/4/2018 and 9/15/2018
+fix comment continuation
+
+# [x] between 9/4/2018 and 9/15/2018
+add docker-compose.yml to create a service stack
+
+# [x] between 9/4/2018 and 9/15/2018
+add docker-machine aliases
+
+# [x] between 9/4/2018 and 9/15/2018
+tweaking the bash tab completion options
+
+# [x] between 9/4/2018 and 9/15/2018
+added docker machine install/remove scripts
+
+# [x] between 9/4/2018 and 9/15/2018
+add installer / remove script for virtualbox
+
+# [x] between 9/4/2018 and 9/15/2018
+add aliases for docker-machine and compose
+
+# [x] between 9/4/2018 and 9/15/2018
+add completion wrapper for docker-compose and docker-machine
+
+# [x] between 9/4/2018 and 9/15/2018
+clean up setup and remove script for .docker
+
+# [x] between 9/4/2018 and 9/15/2018
+refactoring of helper script from setup.sh to the individual installers
+
+# [x] between 9/4/2018 and 9/15/2018
+add call to docker-machine-install.sh to docker-install.sh
+
