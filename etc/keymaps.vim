@@ -18,4 +18,8 @@ command Bo :%bd<bar>e#<bar>bd#
 
 " abbreviations
 iabbr cb; # [?]
+iabbr xb; # [x]
 iabbr ts; <C-R>=strftime("%c", localtime())<CR>
+iabbr xbts; # [x] <C-R>=strftime("%c", localtime())<CR>
+
+

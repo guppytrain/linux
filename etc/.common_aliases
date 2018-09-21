@@ -128,6 +128,7 @@ alias fcd="cd \$(find . -maxdepth 1 -type d -not -path \"*/\.*\" | fz)"
 alias jv="java -version"
 
 # git related
+alias gupdate="gotoplanter; ./plant.sh"
 alias g="git $@"
 alias gst="g status"
 alias gadd="g add $@"
