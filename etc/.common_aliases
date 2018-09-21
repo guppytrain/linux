@@ -207,6 +207,6 @@ alias vplanter="cd $DEV_DIR/planter; vim $@"
 # alias vchanged="vim $(git status -s | awk '{print $2}' | tr '\n' ' ')"
 
 # todo list
-alias todo="vim $HOME/dev/linux/TODO"
+alias todo="vim +$ $HOME/dev/linux/TODO"
 alias todopr="cat $HOME/dev/linux/TODO"
 alias todosave="gotolinux; gadd TODO; gcm 'update TODO'; git push"
