@@ -136,7 +136,7 @@ alias gcm="g commit -m $@"
 alias gfadd="git_fzf_add.sh $@"
 alias gfcm="git_fzf_commit.sh $@"
 alias gd="git diff HEAD^ $@"
-alias gdt="git difftool HEAD^ $@"
+alias gdt="git difftool -y HEAD^ $@"
 
 # docker related
 alias dbld="../build.sh $@"
@@ -207,5 +207,6 @@ alias vplanter="cd $DEV_DIR/planter; vim $@"
 # alias vchanged="vim $(git status -s | awk '{print $2}' | tr '\n' ' ')"
 
 # todo list
-alias todo="vim $HOME/dev/TODO"
-alias prtodo="cat $HOME/dev/TODO"
+alias todo="vim $HOME/dev/linux/TODO"
+alias todopr="cat $HOME/dev/linux/TODO"
+alias todosave="gotolinux; gadd TODO; gcm 'update TODO'; git push"
