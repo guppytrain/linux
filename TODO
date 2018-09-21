@@ -176,4 +176,6 @@ change gototmp to go to /tmp instead of ~/tmp
 # [x] Fri 21 Sep 2018 11:51:44 AM PDT 
 add TODO list to linux repo
 
+# [x] Fri 21 Sep 2018 12:36:36 PM PDT 
+update aliases to open TODO at end of file; added save alias to save TODO
 
