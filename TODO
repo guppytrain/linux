@@ -185,3 +185,5 @@ if update-alternatives is available, run it for java and javac
 # [x] Sat 22 Sep 2018 10:01:39 AM PDT
 define tmp dir var in etc and scripts
 
+# [x] Sat 22 Sep 2018 10:08:32 AM PDT
+add alias to commit and push to git
