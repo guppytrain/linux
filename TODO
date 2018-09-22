@@ -182,4 +182,6 @@ update aliases to open TODO at end of file; added save alias to save TODO
 # [x] Fri 21 Sep 2018 05:23:35 PM PDT 
 if update-alternatives is available, run it for java and javac
 
+# [x] Sat 22 Sep 2018 10:01:39 AM PDT
+define tmp dir var in etc and scripts
 
