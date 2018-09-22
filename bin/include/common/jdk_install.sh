@@ -113,3 +113,9 @@ fi
 
 # print out the version
 "$dest_dir/current/bin/java" -version
+
+# update alternatives, maybe
+[ -n "$(command -v update-alternatives)" ] && (
+    sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/current/bin/java 1234
+    sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/current/bin/javac 1234
+)

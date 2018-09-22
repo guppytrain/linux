@@ -15,7 +15,6 @@ else
     jdk_file_path="${SHARE_DIR}/docker/$JDK_FILENAME"
 fi
 
-
 # use downloaded file to figure out folder name for deletion
 if [ -f "$jdk_file_path" ]; then
     echo "Extracting to find jdk folder name"
@@ -46,3 +45,9 @@ else
     echo "dest_dir does not exist"
 	exit 0
 fi
+
+# update alternatives, maybe
+[ -n "$(command -v update-alternatives)" ] && (
+    sudo update-alternatives --remove java /usr/lib/jvm/current/bin/java
+    sudo update-alternatives --remove javac /usr/lib/jvm/current/bin/javac
+)
