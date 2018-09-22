@@ -187,3 +187,6 @@ define tmp dir var in etc and scripts
 
 # [x] Sat 22 Sep 2018 10:08:32 AM PDT
 add alias to commit and push to git
+
+# [x] Sat 22 Sep 2018 10:13:52 AM PDT
+test new alias for git commit and push
