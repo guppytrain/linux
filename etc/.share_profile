@@ -1,5 +1,6 @@
 export DEV_DIR="$HOME/dev" 
 export SHARE_DIR="$HOME/share"
+export TMP_DIR="$HOME/tmp"
 
 if [ -z "$SHARED_PROFILE" ]; then
 	# echo "Setting up shared profile"
