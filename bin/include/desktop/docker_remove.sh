@@ -5,7 +5,7 @@ echo "Docker Removal..."
 # remove docker via pkg mgr
 docker_base_remove.sh && (
     # remove docker help function
-    cp "$SHARE_DIR/bin/sd.sh "
+    rm "$SHARE_DIR/bin/sd.sh"
 
     # grab options
     while getopts 'p' o; do

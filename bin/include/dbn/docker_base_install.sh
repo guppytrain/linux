@@ -44,7 +44,9 @@ if [ -n "${mint}" ]; then
         bash -c "read -s -e -p \"[OK]\""
         echo
 
-        # sudo reboot
+        printf "%s\n%s\n" "cd $CWH/bin/installers" "$(cat $CWH/bin/installers/docker_install.sh)" > "$SHARE_DIR/jobs/once/docker_install_on_reboot.sh"
+
+        sudo reboot
     fi
 else
     # [_] get gpg key

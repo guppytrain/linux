@@ -9,7 +9,7 @@ echo "Starting Desktop Uninstall..."
 cd $CWH/bin/installers 
 ./vim_plugins_remove.sh 
 ./dropbox_remove.sh 
-./docker_remove.sh 
 ./virtualbox_remove.sh 
 ./idea_remove.sh
+./docker_remove.sh 
 echo "Finished Desktop Uninstall"

@@ -43,9 +43,11 @@ fi
 cd $CWH/bin/installers
 ./vim_plugins_install.sh
 ./dropbox_install.sh 
-./docker_install.sh 
 ./virtualbox_install.sh 
 ./idea_install.sh -t &&  
 ./idea_activate.sh 
+
+# run docker install last because in some cases it needs a reboot to finish
+./docker_install.sh 
 
 echo "Finished Desktop Install"
