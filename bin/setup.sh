@@ -124,6 +124,7 @@ fi
 echo "Copying bin and etc files"
 
 cp -f "$CWH/bin/util/add_ssh_key.sh" "$SHARE_DIR/bin/."
+cp -f "$CWH/bin/util/run_jobs.sh" "$SHARE_DIR/bin/."
 
 # TODO: refactor this to the individual installers
 # cp -f "$CWH/bin/util/setjava.sh" "$SHARE_DIR/bin/."

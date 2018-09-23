@@ -36,6 +36,9 @@ if [ -z "$SHARED_PROFILE" ]; then
 
 	# unset addpath
 
+    # run jobs on login to profile
+    run_jobs.sh
+
 	SHARED_PROFILE="true"
 # else
 	# echo "Shared profile already set, ignore."
