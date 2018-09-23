@@ -194,3 +194,13 @@ test new alias for git commit and push
 # [x] Sat 22 Sep 2018 04:55:14 PM PDT
 add script to run jobs on login
 
+# [x] Sun 23 Sep 2018 12:52:16 PM PDT
+update run jobs to run job in current terminal instead of saving output to files, this is because some job may require user input.
+
+# [x] Sun 23 Sep 2018 12:53:17 PM PDT
+fix fzf default command which was showing git folders
+
+# [x] Sun 23 Sep 2018 12:54:02 PM PDT
+update docker install scripts to write a script out to rerun the docker install script after a reboot
+
+
