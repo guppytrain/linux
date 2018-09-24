@@ -209,3 +209,17 @@ update run jobs.sh to 'tee' the output to a file, while allowing user interactio
 # [x] Mon 24 Sep 2018 11:31:12 AM PDT
 hardcode bionic as lsb for docker and virtualbox repos
 
+# [x] Mon 24 Sep 2018 03:16:00 PM PDT
+add instructions to log in to docker
+
+# [x] Mon 24 Sep 2018 03:16:17 PM PDT
+update docker install to write reboot script
+
+# [x] Mon 24 Sep 2018 03:16:46 PM PDT
+update setup.sh to create job folders
+
+# [x] Mon 24 Sep 2018 03:16:56 PM PDT
+fix issue with idea license file check, was using || instead of &&
+
+# [x] Mon 24 Sep 2018 03:45:14 PM PDT
+update aliases to include fzf based git diff

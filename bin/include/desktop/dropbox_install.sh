@@ -23,7 +23,7 @@ dbx_uri="https://www.dropbox.com/download?plat=lnx.x86_64"
 
 # download file, if not already downloaded
 if [ ! -f "$DOWNLOAD_DIR/$filename" ]; then
-        echo "About to download file: $filename"
+    echo "About to download file: $filename"
 	wget -O "$DOWNLOAD_DIR/$filename" "$dbx_uri"
 fi
 

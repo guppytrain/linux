@@ -53,6 +53,18 @@ if [ ! -d "$SHARE_DIR/etc/include" ]; then
 	mkdir "$SHARE_DIR/etc/include"
 fi
 
+if [ ! -d "$SHARE_DIR/jobs" ]; then 
+    mkdir "$SHARE_DIR/jobs"
+fi
+
+if [ ! -d "$SHARE_DIR/jobs/once" ]; then 
+    mkdir "$SHARE_DIR/jobs/once"
+fi
+
+if [ ! -d "$SHARE_DIR/jobs/profile" ]; then 
+    mkdir "$SHARE_DIR/jobs/profile"
+fi
+
 # build the .share_profile file
 # remove existing if any
 share_file="$SHARE_DIR/etc/.share_profile"

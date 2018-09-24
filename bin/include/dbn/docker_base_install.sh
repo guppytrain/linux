@@ -20,7 +20,7 @@ if [ -n "${mint}" ]; then
         --recv-keys ${keyid}
     
     # repo="deb https://apt.dockerproject.org/repo ubuntu-xenial main"
-    repo="deb https://apt.dockerproject.org/repo ubuntu-bionic stable"
+    repo="deb https://apt.dockerproject.org/repo ubuntu-zesty main"
     repoed="$(cat /etc/apt/sources.list /etc/apt/sources.list.d/*.list | grep -o "${repo}")"
     
     # Next, point the package manager to the official Docker repository
@@ -46,6 +46,8 @@ if [ -n "${mint}" ]; then
         echo
 
         printf "%s\n%s\n" "cd $CWH/bin/installers" "$(cat $CWH/bin/installers/docker_install.sh)" > "$SHARE_DIR/jobs/once/docker_install_on_reboot.sh"
+
+        sync
 
         sudo reboot
     fi

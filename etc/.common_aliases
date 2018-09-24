@@ -136,8 +136,8 @@ alias gcm="g commit -m $@"
 alias gfadd="git_fzf_add.sh $@"
 alias gfcm="git_fzf_commit.sh $@"
 alias gfsave="git_fzf_commit.sh $@ && git push"
-alias gd="git diff HEAD^ $@"
-alias gdt="git difftool -y HEAD^ $@"
+alias gfd="git_fzf_diff.sh"
+alias gfdu="git_fzf_diff.sh -u"
 
 # docker related
 alias dbld="../build.sh $@"

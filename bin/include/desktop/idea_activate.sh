@@ -5,7 +5,8 @@ echo "Starting idea activate..."
 # download license key for IntelliJ
 license_file="YMYRG6F1LL.txt"
 
-if [ ! -f "$HOME/Downloads/$license_file" ] || [ ! -f "$DOWNLOAD_DIR/$license_file" ]; then
+# download license files, if needed
+if [ ! -f "$HOME/Downloads/$license_file" ] && [ ! -f "$DOWNLOAD_DIR/$license_file" ]; then
     url="https://www.jetbrains.com"
 
     printf "%s\n%s\n" "Press ENTER to open JetBrains site to log in to JetBrains account." "Then download license file ('YMYRG6F1LL.txt') for offline use, into $HOME/Downloads."
