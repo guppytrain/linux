@@ -19,7 +19,8 @@ if [ -n "${mint}" ]; then
     [ -z "${pkey}" ] && sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 \
         --recv-keys ${keyid}
     
-    repo="deb https://apt.dockerproject.org/repo ubuntu-xenial main"
+    # repo="deb https://apt.dockerproject.org/repo ubuntu-xenial main"
+    repo="deb https://apt.dockerproject.org/repo ubuntu-bionic stable"
     repoed="$(cat /etc/apt/sources.list /etc/apt/sources.list.d/*.list | grep -o "${repo}")"
     
     # Next, point the package manager to the official Docker repository
