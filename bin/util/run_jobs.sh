@@ -18,8 +18,9 @@ if [ -d "$PROFILE_JOBS_DIR" ]; then
 
         # echo "reply: $reply"
 
-        # printf "%s\n\n%s\n" "[Timestamp: $(date)]" "$(. $f)" > "$STATUS_DIR/${f}.out" 2>"$STATUS_DIR/${f}.err"
-        [ "$reply" = "Y" ] && "$(. "$f")" || echo "Skipping \"$f\""
+        [ "$reply" = "Y" ] && . "$f" 2>"$STATUS_DIR/${f}.err" | tee "$STATUS_DIR/${f}.out" || echo "Skipping \"$f\""
+
+        # [ "$reply" = "Y" ] && "$(. "$f")" || echo "Skipping \"$f\""
      done
 fi
 
@@ -39,8 +40,9 @@ if [ -d "$ONCE_JOBS_DIR" ]; then
 
         # echo "reply: $reply"
 
-        # printf "%s\n\n%s\n" "[Timestamp: $(date)]" "$(. $f)" > "$STATUS_DIR/${f}.out" 2>"$STATUS_DIR/${f}.err"
-        [ "$reply" = "Y" ] && "$(. "$f")" || echo "Skipping \"$f\""
+        [ "$reply" = "Y" ] && . "$f" 2>"$STATUS_DIR/${f}.err" | tee "$STATUS_DIR/${f}.out" || echo "Skipping \"$f\""
+
+        # [ "$reply" = "Y" ] && . "$f" || echo "Skipping \"$f\""
         
         files+=("${f}")
     done
