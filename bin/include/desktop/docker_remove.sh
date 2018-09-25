@@ -30,6 +30,7 @@ docker_base_remove.sh && (
     # purge all docker images, containers, volumes, custom config, etc
     if [ "${purge}" = true ]; then
         echo "Purging all docker related remaining stuff"
+        sudo rm -rf $HOME/.docker
         sudo rm -rf /var/lib/docker
     else
         echo "Docker related stuff NOT purged: images, containers, volumes, custom config, etc"

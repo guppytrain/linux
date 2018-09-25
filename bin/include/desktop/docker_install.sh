@@ -12,15 +12,15 @@ docker_base_install.sh && (
         echo "Adding user to group 'docker'"
         sudo usermod -aG docker $USER
 
-        printf "%s\n" "Group/user changes do not take effect until logging out and logging back in"
+        printf "%s\n" "Group/user changes do not take effect until logging out and logging back in, however other docker component require a full system reboot."
         bash -c "read -s -e -p \"[OK]\""
         echo
 
-        printf "%s\n" "After logging back in, run 'installers/docker_post_install.sh' to test docker installation, and to install other docker components"
+        printf "%s\n" "After rebooting in, run 'installers/docker_post_install.sh' to test docker installation, and to install other docker components"
         bash -c "read -s -e -p \"[OK]\""
         echo
 
-        [ -n "$(command -v gnome-session-quit)" ] && gnome-session-quit --logout
+        [ -n "$(command -v gnome-session-quit)" ] && gnome-session-quit --reboot
     ) || echo "USER not defined"
 ) 
 
