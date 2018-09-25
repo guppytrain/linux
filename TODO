@@ -245,4 +245,6 @@ create docker group and add user to it
 # [x] Tue 25 Sep 2018 10:54:23 AM PDT
 remove sudo prefixes from all docker related calls
 
+# [x] Tue 25 Sep 2018 11:23:10 AM PDT
+refactor docker install, post install and docker machine install calls
 
