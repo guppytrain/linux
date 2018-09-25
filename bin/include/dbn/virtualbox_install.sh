@@ -15,7 +15,7 @@ sudo apt-get update
 
 # install docker-ce
 # sudo apt-get install -y virtualbox-5.2
-sudo apt-get install -y virtualbox
+sudo apt-get install -y virtualbox virtualbox-qt
 
 # download ext pack
 # wget -P $DOWNLOAD_DIR https://download.virtualbox.org/virtualbox/5.2.18/Oracle_VM_VirtualBox_Extension_Pack-5.2.18.vbox-extpack

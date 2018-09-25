@@ -169,14 +169,14 @@ alias sdcurrun="[ -f "./cmds/run_latest.cmd" ] && bash -C ./cmds/run_latest.cmd 
 alias sdcurstart="[ -f "./cmds/start_latest.cmd" ] && bash -C ./cmds/start_latest.cmd $@ || echo 'Currently NOT in a Docker folder, with a Dockerfile' "
 
 # docker machine
-alias dkm="docker-machine $@"
-alias dkmh="docker-machine help $@"
-alias dkmls="docker-machine 'ls'"
+alias dkm="sudo docker-machine $@"
+alias dkmh="sudo docker-machine help $@"
+alias dkmls="sudo docker-machine 'ls'"
 alias dkmsh="eval \"PS1='[\u@\h \W\$(__docker_machine_ps1)]\$ '\""
 
 # docker compose
-alias dkc="docker-compose $@"
-alias dkch="docker-compose help $@"
+alias dkc="sudo docker-compose $@"
+alias dkch="sudo docker-compose help $@"
 
 # shortcuts to frequent directories
 alias gototmp="cd ~/tmp"
@@ -186,7 +186,7 @@ alias gotodev="cd $DEV_DIR"
 alias gotodocker="cd $DEV_DIR/docker"
 alias gotoamazon="cd $DEV_DIR/docker/amazon_dev"
 alias gotoalpine="cd $DEV_DIR/docker/alpine_dev"
-alias gotodebian="cd $DEV_DIR/docker/debian_dev"
+alias gotodbn="cd $DEV_DIR/docker/debian_dev"
 
 alias gotoplanter="cd $DEV_DIR/planter"
 
@@ -196,6 +196,7 @@ alias gotolinuxetc="cd $DEV_DIR/linux/etc"
 alias gotolinuxbin="cd $DEV_DIR/linux/bin"
 alias gotolinuxutil="cd $DEV_DIR/linux/bin/util"
 alias gotolinuxinstallers="cd $DEV_DIR/linux/bin/installers"
+alias gotolinuxinclude="cd $DEV_DIR/linux/bin/include"
 alias gotolinuxcommon="cd $DEV_DIR/linux/bin/include/common"
 alias gotolinuxdesktop="cd $DEV_DIR/linux/bin/include/desktop"
 

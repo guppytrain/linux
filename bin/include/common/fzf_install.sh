@@ -24,3 +24,4 @@ done
 # git fzf helper script
 cp -f "$CWH/bin/util/git_fzf_add.sh" "$SHARE_DIR/bin/."
 cp -f "$CWH/bin/util/git_fzf_commit.sh" "$SHARE_DIR/bin/."
+cp -f "$CWH/bin/util/git_fzf_diff.sh" "$SHARE_DIR/bin/."
