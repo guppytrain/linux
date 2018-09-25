@@ -2,6 +2,12 @@
 
 echo "Docker Removal..."
 
+# group mgmt
+if [ -n "$USER" ]; then
+    sudo gpasswd -d $USER docker
+    sudo groupdel docker
+fi
+
 # remove docker via pkg mgr
 docker_base_remove.sh && (
     # remove docker help function
@@ -31,5 +37,8 @@ docker_base_remove.sh && (
 
     # NOTE: any edited configuration files must be deleted manually
     echo "NOTE: any edited configuration files must be deleted manually"
-) && 
+)
+
+# remove other docker components / tools
 docker_machine_remove.sh
+

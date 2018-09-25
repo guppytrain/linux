@@ -3,24 +3,24 @@
 get_docker_container_id ()
 {
     # select ids with fuzzy search
-    sudo pwd >/dev/null 2>&1 && 
-    local id="$(sudo docker container ls --all | fzf -m --height=50% --tac | awk '{print $1}' | tr '\n' ' ' | sed -n 's/[[:space:]]\+$//p')" &&
+    pwd >/dev/null 2>&1 && 
+    local id="$(docker container ls --all | fzf -m --height=50% --tac | awk '{print $1}' | tr '\n' ' ' | sed -n 's/[[:space:]]\+$//p')" &&
     echo "$id"
 }
 
 get_docker_image_id ()
 {
     # select ids with fuzzy search
-    sudo pwd >/dev/null 2>&1 && 
-    local id="$(sudo docker image ls $@ | fzf -m --height=50% --tac | awk '{print $3}' | tr '\n' ' ' | sed -n 's/[[:space:]]\+$//p')" &&
+    pwd >/dev/null 2>&1 && 
+    local id="$(docker image ls $@ | fzf -m --height=50% --tac | awk '{print $3}' | tr '\n' ' ' | sed -n 's/[[:space:]]\+$//p')" &&
     echo "$id"
 }
 
 get_docker_image_name ()
 {
     # select ids with fuzzy search
-    sudo pwd >/dev/null 2>&1 && 
-    local name="$(sudo docker image ls $@ | fzf -m --height=50% --tac | awk '{print $1":"$2}' | tr '\n' ' ' | sed -n 's/[[:space:]]\+$//p')" &&
+    pwd >/dev/null 2>&1 && 
+    local name="$(docker image ls $@ | fzf -m --height=50% --tac | awk '{print $1":"$2}' | tr '\n' ' ' | sed -n 's/[[:space:]]\+$//p')" &&
     echo "$name"
 }
 
@@ -31,7 +31,7 @@ run_docker_image ()
     # validate
     [ -z "${name}" ] && 
         echo "Nothing selected. Aborting..." ||
-    sudo docker run -it $@ $name
+    docker run -it $@ $name
 }
 
 rm_docker_image ()
@@ -41,7 +41,7 @@ rm_docker_image ()
     # validate
     [ -z "${name}" ] && 
         echo "Nothing selected. Aborting..." ||
-    sudo docker image rm -f $name
+    docker image rm -f $name
 }
 
 rm_docker_image_all ()
@@ -51,7 +51,7 @@ rm_docker_image_all ()
     # validate
     [ -z "${id}" ] && 
         echo "Nothing selected. Aborting..." ||
-    sudo docker image rm -f $id
+    docker image rm -f $id
 }
 
 start_docker_container ()
@@ -61,7 +61,7 @@ start_docker_container ()
     # validate
     [ -z "${id}" ] && 
         echo "Nothing selected. Aborting..." ||
-    sudo docker container start -i $id
+    docker container start -i $id
 }
 
 rm_docker_container ()
@@ -71,7 +71,7 @@ rm_docker_container ()
     # validate
     [ -z "${id}" ] && 
         echo "Nothing selected. Aborting..." ||
-    sudo docker container rm -f $id
+    docker container rm -f $id
 }
 
 

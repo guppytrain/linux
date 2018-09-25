@@ -2,9 +2,13 @@
 
 echo "Install docker-machine binaries"
 
-base=https://github.com/docker/machine/releases/download/v0.14.0 &&
+# base=https://github.com/docker/machine/releases/download/v0.14.0 &&
+#     curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine &&
+#     sudo install /tmp/docker-machine /usr/local/bin/docker-machine
+base=https://github.com/docker/machine/releases/download/v0.15.0 && 
     curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine &&
-    sudo install /tmp/docker-machine /usr/local/bin/docker-machine
+    chmod +x /tmp/docker-machine &&
+    sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
 
 docker-machine version
 
@@ -13,7 +17,8 @@ echo "Install docker-machine completion and prompt"
 # either source this file or put it in /etc/bash_completion.d/
 # source /etc/bash_completion.d/docker-machine-prompt.bash
 
-base=https://raw.githubusercontent.com/docker/machine/v0.14.0
+# base=https://raw.githubusercontent.com/docker/machine/v0.14.0
+base=https://raw.githubusercontent.com/docker/machine/v0.15.0
 for i in docker-machine-prompt.bash docker-machine-wrapper.bash docker-machine.bash
 do
     sudo wget "$base/contrib/completion/bash/${i}" -P /etc/bash_completion.d
