@@ -15,6 +15,12 @@ docker_base_install.sh && (
         printf "%s\n" "Group/user changes do not take effect until logging out and logging back in"
         bash -c "read -s -e -p \"[OK]\""
         echo
+
+        printf "%s\n" "After logging back in, run 'installers/docker_post_install.sh' to test docker installation, and to install other docker components"
+        bash -c "read -s -e -p \"[OK]\""
+        echo
+
+        [ -n "$(command -v gnome-session-quit)" ] && gnome-session-quit --logout
     ) || echo "USER not defined"
 ) 
 

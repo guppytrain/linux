@@ -12,4 +12,5 @@ cd $CWH/bin/installers
 ./virtualbox_remove.sh 
 ./idea_remove.sh
 ./docker_remove.sh 
+./docker_machine_remove.sh 
 echo "Finished Desktop Uninstall"
