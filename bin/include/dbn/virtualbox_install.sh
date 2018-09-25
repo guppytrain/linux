@@ -8,6 +8,7 @@ wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key a
 
 # setup the stable repo
 # sudo add-apt-repository "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib"
+# sudo add-apt-repository "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian zesty contrib"
 sudo add-apt-repository "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian bionic contrib"
 
 # update apt-get
