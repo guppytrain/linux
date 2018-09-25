@@ -242,3 +242,7 @@ add new aliases for gotolinuxinclude and gotodbn
 # [x] Tue 25 Sep 2018 09:14:28 AM PDT
 create docker group and add user to it
 
+# [x] Tue 25 Sep 2018 10:54:23 AM PDT
+remove sudo prefixes from all docker related calls
+
+
