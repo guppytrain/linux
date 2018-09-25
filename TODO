@@ -250,3 +250,10 @@ refactor docker install, post install and docker machine install calls
 
 # [x] Tue 25 Sep 2018 11:34:10 AM PDT
 add session logout option to docker install
+
+# [x] Tue 25 Sep 2018 02:35:28 PM PDT 
+update comments in docker install; instead of logout, reboot instead
+
+# [x] Tue 25 Sep 2018 02:37:03 PM PDT
+remove HOME/.docker on docker removal
+
