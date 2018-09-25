@@ -238,3 +238,7 @@ add aliases to use git fzf diff.sh
 
 # [x] Mon 24 Sep 2018 07:40:15 PM PDT
 add new aliases for gotolinuxinclude and gotodbn
+
+# [x] Tue 25 Sep 2018 09:14:28 AM PDT
+create docker group and add user to it
+
