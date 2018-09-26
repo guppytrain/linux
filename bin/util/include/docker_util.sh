@@ -74,4 +74,20 @@ rm_docker_container ()
     docker container rm -f $id
 }
 
+be_docker_vm ()
+{
+    [ -n "$1" ] && eval $(docker-machine env $1)
+}
 
+eb_docker_vm ()
+{
+    eval $(docker-machine env -u)
+}
+
+dkmopen ()
+{
+    [ -n "$1" ] && (
+        url="http://$(docker-machine ip $1):${2:-4000}"
+        [ -n "${url}" ] && ( [ "$(command -v xdg-open)" ] && xdg-open "${url}" >/dev/null 2>&1 ) || ( [   "$(command -v gnome-open)" ] && gnome-open "${url}" >/dev/null 2>&1 )
+    ) || echo "Usage: dkmopen <vm_name> [port]"
+}
