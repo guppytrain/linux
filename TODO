@@ -265,3 +265,6 @@ add docker helper function to select vms
 
 # [x] Thu 27 Sep 2018 11:24:57 AM PDT
 add more vim aliases
+
+# [x] Thu 27 Sep 2018 11:25:34 AM PDT
+in share_profile, do not source .swp files
