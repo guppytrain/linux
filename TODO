@@ -262,3 +262,6 @@ add docker machine help functions
 
 # [x] Thu 27 Sep 2018 11:24:24 AM PDT
 add docker helper function to select vms
+
+# [x] Thu 27 Sep 2018 11:24:57 AM PDT
+add more vim aliases
