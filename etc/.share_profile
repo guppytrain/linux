@@ -12,7 +12,9 @@ if [ -z "$SHARED_PROFILE" ]; then
     # . $SHARE_DIR/bin/addpath.sh
     # include all scripts
     # for f in $(ls -A $SHARE_DIR/bin/include); do source $f; done
-    for f in $(ls -A $SHARE_DIR/bin/include); do source $SHARE_DIR/bin/include/$f; done
+    for f in $(ls -A $SHARE_DIR/bin/include); do 
+        [ -z "$(grep ".swp" < <(echo $f))" ] && source $SHARE_DIR/bin/include/$f;
+    done
 
 	if [ -d "$SHARE_DIR/bin" ] ; then
 		# echo "Adding share bin/ to path"
@@ -27,7 +29,9 @@ if [ -z "$SHARED_PROFILE" ]; then
 	fi
 
     # include all configs
-    for ff in $(ls -A $SHARE_DIR/etc/include); do source $SHARE_DIR/etc/include/$ff; done
+    for ff in $(ls -A $SHARE_DIR/etc/include); do 
+        [ -z "$(grep ".swp" < <(echo $f))" ] && source $SHARE_DIR/etc/include/$ff; 
+    done
 
 	if [ -f "$SHARE_DIR/etc/.common_aliases" ] ; then
 		# echo "Including .common_aliases"

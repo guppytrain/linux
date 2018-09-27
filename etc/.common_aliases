@@ -201,6 +201,8 @@ alias gotolinuxcommon="cd $DEV_DIR/linux/bin/include/common"
 alias gotolinuxdesktop="cd $DEV_DIR/linux/bin/include/desktop"
 
 # vim shortcuts
+alias vendit="vim +\$ +startinsert $@"
+alias vedit="vim +startinsert $@"
 alias vshare="cd $SHARE_DIR; vim $@"
 alias vdev="cd $DEV_DIR; vim $@"
 alias vlinux="cd $DEV_DIR/linux; vim $@"

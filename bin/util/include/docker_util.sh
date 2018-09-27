@@ -91,3 +91,20 @@ dkmopen ()
         [ -n "${url}" ] && ( [ "$(command -v xdg-open)" ] && xdg-open "${url}" >/dev/null 2>&1 ) || ( [   "$(command -v gnome-open)" ] && gnome-open "${url}" >/dev/null 2>&1 )
     ) || echo "Usage: dkmopen <vm_name> [port]"
 }
+
+fdkm ()
+{
+    local data="$(ls -A $HOME/.docker/machine/machines | tr '[:space:]' '\n')"
+
+    # select files to commit with fuzzy search
+    local selections="$(echo "$data" | fzf -m --height=35% --layout=reverse --prompt='Item(s): ' | tr '\n' ' ' | sed -n 's/[[:space:]]\+$//p')"
+
+    # ensure non-empty
+    [ -z "${selections}" ] && 
+        echo "No items selected. Aborting..." &&
+            sleep 1 &&
+                exit 1
+
+    # output selections
+    echo "${selections}"
+}
