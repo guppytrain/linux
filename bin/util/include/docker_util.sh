@@ -94,10 +94,10 @@ dkmopen ()
 
 fdkm ()
 {
-    local data="$(ls -A $HOME/.docker/machine/machines | tr '[:space:]' '\n')"
+    local data="$(docker-machine ls)"
 
     # select files to commit with fuzzy search
-    local selections="$(echo "$data" | fzf -m --height=35% --layout=reverse --prompt='Item(s): ' | tr '\n' ' ' | sed -n 's/[[:space:]]\+$//p')"
+    local selections="$(echo "$data" | fzf -m --height=35% --layout=reverse --prompt='Item(s): ' | awk '{print $1}' | tr '\n' ' ' | sed -n 's/[[:space:]]\+$//p')"
 
     # ensure non-empty
     [ -z "${selections}" ] && 
