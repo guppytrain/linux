@@ -274,3 +274,6 @@ switch fzf docker machine selection to use docker-machine ls output instead of l
 
 # [x] Fri 28 Sep 2018 11:56:31 AM PDT
 in various cases, if no vm name is provided, open up fzf selection
+
+# [x] Fri 28 Sep 2018 12:05:12 PM PDT
+add back non-fzf git diff aliases
