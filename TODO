@@ -268,3 +268,7 @@ add more vim aliases
 
 # [x] Thu 27 Sep 2018 11:25:34 AM PDT
 in share_profile, do not source .swp files
+
+# [x] Fri 28 Sep 2018 10:06:59 AM PDT
+switch fzf docker machine selection to use docker-machine ls output instead of ls on the .docker/machine folder
+
