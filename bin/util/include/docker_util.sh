@@ -76,7 +76,15 @@ rm_docker_container ()
 
 be_docker_vm ()
 {
-    [ -n "$1" ] && eval $(docker-machine env $1)
+    if [ -n "$1" ]; then
+        eval $(docker-machine env $1)
+    else
+        vms="$(fdkm)"
+
+        if [ -n "$vms" ]; then
+            eval $(docker-machine env $vms)
+        fi
+    fi
 }
 
 eb_docker_vm ()
@@ -86,18 +94,39 @@ eb_docker_vm ()
 
 dkmopen ()
 {
-    [ -n "$1" ] && (
-        url="http://$(docker-machine ip $1):${2:-4000}"
+    local vms="${1-$(fdkm)}"
+    local port="${2:-4000}"
+
+    [ -n "$vms" ] && (
+        url="http://$(docker-machine ip $vms):${port}"
         [ -n "${url}" ] && ( [ "$(command -v xdg-open)" ] && xdg-open "${url}" >/dev/null 2>&1 ) || ( [   "$(command -v gnome-open)" ] && gnome-open "${url}" >/dev/null 2>&1 )
     ) || echo "Usage: dkmopen <vm_name> [port]"
 }
 
 fdkm ()
 {
-    local data="$(docker-machine ls)"
+    local multi=
 
     # select files to commit with fuzzy search
-    local selections="$(echo "$data" | fzf -m --height=35% --layout=reverse --prompt='Item(s): ' | awk '{print $1}' | tr '\n' ' ' | sed -n 's/[[:space:]]\+$//p')"
+    while getopts 'm' o; do
+        case "$o" in
+            m)
+                multi='true'
+                ;;
+            *)
+                ;;
+        esac
+    done
+
+    shift $(( OPTIND-1 ))
+
+    local data="$(docker-machine ls)"
+
+    if [ -n "$multi" ]; then
+        local selections="$(echo "$data" | fzf -m --height=35% --layout=reverse --prompt='Item(s): ' | awk '{print $1}' | tr '\n' ' ' | sed -n 's/[[:space:]]\+$//p')"
+    else
+        local selections="$(echo "$data" | fzf --height=35% --layout=reverse --prompt='Item(s): ' | awk '{print $1}' | tr '\n' ' ' | sed -n 's/[[:space:]]\+$//p')"
+    fi
 
     # ensure non-empty
     [ -z "${selections}" ] && 
@@ -108,3 +137,5 @@ fdkm ()
     # output selections
     echo "${selections}"
 }
+
+
