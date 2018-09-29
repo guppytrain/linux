@@ -114,6 +114,7 @@ fdkm ()
                 multi='true'
                 ;;
             *)
+                echo "Usage: $0 [-m]"
                 ;;
         esac
     done
@@ -122,20 +123,14 @@ fdkm ()
 
     local data="$(docker-machine ls)"
 
-    if [ -n "$multi" ]; then
+    if [ "$multi" = 'true' ]; then
         local selections="$(echo "$data" | fzf -m --height=35% --layout=reverse --prompt='Item(s): ' | awk '{print $1}' | tr '\n' ' ' | sed -n 's/[[:space:]]\+$//p')"
     else
         local selections="$(echo "$data" | fzf --height=35% --layout=reverse --prompt='Item(s): ' | awk '{print $1}' | tr '\n' ' ' | sed -n 's/[[:space:]]\+$//p')"
     fi
 
-    # ensure non-empty
-    [ -z "${selections}" ] && 
-        echo "No items selected. Aborting..." &&
-            sleep 1 &&
-                exit 1
-
     # output selections
-    echo "${selections}"
+    [ -n "${selections}" ] &&  echo "${selections}" || echo "No items selected. Aborting..."
 }
 
 
