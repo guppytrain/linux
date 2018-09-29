@@ -277,3 +277,6 @@ in various cases, if no vm name is provided, open up fzf selection
 
 # [x] Fri 28 Sep 2018 12:05:12 PM PDT
 add back non-fzf git diff aliases
+
+# [x] Sat 29 Sep 2018 11:26:02 AM PDT
+update docker util's dkfm implementation
