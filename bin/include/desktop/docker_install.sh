@@ -4,6 +4,7 @@
 docker_base_install.sh && (
     # copy docker helper script
     cp -f "$CWH/bin/util/sd.sh" "$SHARE_DIR/bin/."
+    cp -f "$CWH/bin/util/include/docker_util.sh" "$SHARE_DIR/bin/include/."
 
     [ -n "$USER" ] && (
         echo "Adding group 'docker'"

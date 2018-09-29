@@ -280,3 +280,8 @@ add back non-fzf git diff aliases
 
 # [x] Sat 29 Sep 2018 11:26:02 AM PDT
 update docker util's dkfm implementation
+
+# [x] Sat 29 Sep 2018 11:27:39 AM PDT
+in docker install script, make sure to copy over the docker util.sh script
+
+
