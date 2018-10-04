@@ -284,4 +284,5 @@ update docker util's dkfm implementation
 # [x] Sat 29 Sep 2018 11:27:39 AM PDT
 in docker install script, make sure to copy over the docker util.sh script
 
-
+# [x] Thu 04 Oct 2018 01:25:34 PM PDT
+add alias to start/stop docker machines
