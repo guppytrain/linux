@@ -286,3 +286,6 @@ in docker install script, make sure to copy over the docker util.sh script
 
 # [x] Thu 04 Oct 2018 01:25:34 PM PDT
 add alias to start/stop docker machines
+
+# [x] Sat 06 Oct 2018 11:19:45 AM PDT
+added gstall aliases
