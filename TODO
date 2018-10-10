@@ -289,3 +289,7 @@ add alias to start/stop docker machines
 
 # [x] Sat 06 Oct 2018 11:19:45 AM PDT
 added gstall aliases
+
+# [x] Wed 10 Oct 2018 02:53:10 PM PDT
+add options to only update docker install
+
