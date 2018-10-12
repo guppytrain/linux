@@ -176,6 +176,8 @@ alias dkm="docker-machine $@"
 alias dkmh="docker-machine help $@"
 alias dkmls="docker-machine 'ls'"
 alias dkmsh="eval \"PS1='[\u@\h \W\$(__docker_machine_ps1)]\$ '\""
+alias dkmstart="docker-machine start \$(fdkm -m)"
+alias dkmstop="docker-machine stop \$(fdkm -m)"
 
 # docker compose
 alias dkc="docker-compose $@"
