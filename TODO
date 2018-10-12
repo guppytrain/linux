@@ -293,3 +293,6 @@ added gstall aliases
 # [x] Wed 10 Oct 2018 02:53:10 PM PDT
 add options to only update docker install
 
+# [x] Fri 12 Oct 2018 09:14:37 AM PDT
+add docker machine shortcuts for starting stopping with fzf selection of machine names
+
